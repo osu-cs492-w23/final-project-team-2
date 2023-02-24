@@ -1,1 +1,7 @@
 Project Name - Eivom
+
+__________________________________________
+If you want to update your local branch
+
+  git pull origin {branch name you want to pull}
+_________________________________________
