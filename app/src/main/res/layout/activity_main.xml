@@ -4,11 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_movie_info_list"
+        android:id="@+id/rv_action_movie_info_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="220dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_comedy_movie_info_list"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"/>
 
 </LinearLayout>
