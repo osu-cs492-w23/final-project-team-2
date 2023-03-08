@@ -10,32 +10,63 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val movieListRV: RecyclerView = findViewById(R.id.rv_movie_info_list)
-        movieListRV.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        movieListRV.setHasFixedSize(true)
+        val ActionmovieListRV: RecyclerView = findViewById(R.id.rv_action_movie_info_list)
+        ActionmovieListRV.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        ActionmovieListRV.setHasFixedSize(true)
 
-        val adapter = MovieInfoAdapter()
-        movieListRV.adapter = adapter
+        val ActionAdapter = ActionMovieInfoAdapter()
+        ActionmovieListRV.adapter = ActionAdapter
 
-        adapter.addMovieInfo(
+        ActionAdapter.addMovieInfo(
             MovieInfo(
                 "Movie Image 4"
             )
         )
 
-        adapter.addMovieInfo(
+        ActionAdapter.addMovieInfo(
             MovieInfo(
                 "Movie Image 3"
             )
         )
 
-        adapter.addMovieInfo(
+        ActionAdapter.addMovieInfo(
             MovieInfo(
                 "Movie Image 2"
             )
         )
 
-        adapter.addMovieInfo(
+        ActionAdapter.addMovieInfo(
+            MovieInfo(
+                "Movie Image 1"
+            )
+        )
+
+        val ComedyMovieListRV: RecyclerView = findViewById(R.id.rv_comedy_movie_info_list)
+        ComedyMovieListRV.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        ComedyMovieListRV.setHasFixedSize(true)
+
+        val ComedyAdapter = ComedyMovieInfoAdapter()
+        ComedyMovieListRV.adapter = ComedyAdapter
+
+        ComedyAdapter.addMovieInfo(
+            MovieInfo(
+                "Movie Image 4"
+            )
+        )
+
+        ComedyAdapter.addMovieInfo(
+            MovieInfo(
+                "Movie Image 3"
+            )
+        )
+
+        ComedyAdapter.addMovieInfo(
+            MovieInfo(
+                "Movie Image 2"
+            )
+        )
+
+        ComedyAdapter.addMovieInfo(
             MovieInfo(
                 "Movie Image 1"
             )
