@@ -1,0 +1,10 @@
+#Tue Mar 07 18:58:25 PST 2023
+base.2=/Users/theingmweoo/final-project-team-2/app/build/intermediates/dex/debug/mergeProjectDexDebug/8/classes.dex
+path.2=8/classes.dex
+base.1=/Users/theingmweoo/final-project-team-2/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+path.1=0/classes.dex
+base.0=/Users/theingmweoo/final-project-team-2/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=classes.dex
