@@ -6,74 +6,91 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/moviePoster"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/sample_movie_poster"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="73dp" />
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/movieTitle"
+        app:layout_constraintTop_toBottomOf="@+id/movieTitle"
+        app:srcCompat="@drawable/sample_movie_poster" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/movieTitle"
         android:layout_width="178dp"
         android:layout_height="34dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="23dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="184dp"
-        android:layout_height="104dp"
+        android:id="@+id/movieDescription"
+        android:layout_width="186dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="8dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="193dp"
-        tools:layout_editor_absoluteY="134dp" />
+        app:layout_constraintEnd_toEndOf="@+id/movieRating"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/movieRating"
+        app:layout_constraintTop_toBottomOf="@+id/movieRating" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/likeButton"
         android:layout_width="150dp"
         android:layout_height="41dp"
+        android:layout_marginTop="12dp"
         android:text="Button"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="300dp" />
+        app:layout_constraintStart_toStartOf="@+id/moviePoster"
+        app:layout_constraintTop_toBottomOf="@+id/moviePoster" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/movieCast"
         android:layout_width="184dp"
         android:layout_height="58dp"
+        android:layout_marginTop="4dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="193dp"
-        tools:layout_editor_absoluteY="283dp" />
+        app:layout_constraintEnd_toEndOf="@+id/movieGenre"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/movieGenre"
+        app:layout_constraintTop_toBottomOf="@+id/movieGenre" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/trailerTitle"
         android:layout_width="149dp"
         android:layout_height="34dp"
+        android:layout_marginTop="32dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="381dp" />
+        app:layout_constraintStart_toStartOf="@+id/likeButton"
+        app:layout_constraintTop_toBottomOf="@+id/likeButton" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="184dp"
-        android:layout_height="37dp"
+        android:id="@+id/movieGenre"
+        android:layout_width="185dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="193dp"
-        tools:layout_editor_absoluteY="243dp" />
+        app:layout_constraintEnd_toEndOf="@+id/movieDescription"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/movieDescription"
+        app:layout_constraintTop_toBottomOf="@+id/movieDescription" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/movieRating"
         android:layout_width="184dp"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="28dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="193dp"
-        tools:layout_editor_absoluteY="78dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <VideoView
-        android:id="@+id/videoView"
+        android:id="@+id/movieTrailer"
         android:layout_width="346dp"
         android:layout_height="257dp"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="430dp" />
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/trailerTitle"
+        app:layout_constraintTop_toBottomOf="@+id/trailerTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
