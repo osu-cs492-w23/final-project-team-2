@@ -14,6 +14,6 @@ class MovieInfoViewModel: ViewModel()  {
 
     val info: LiveData<MovieInfo?> = _info
 
-    
+
 
 }
