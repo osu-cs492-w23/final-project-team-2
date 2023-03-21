@@ -27,7 +27,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.Eivom" >
         <activity
-            android:name="com.example.eivom.MainActivity"
+            android:name="com.example.eivom.ui.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
