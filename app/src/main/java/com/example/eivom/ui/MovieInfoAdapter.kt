@@ -35,9 +35,6 @@ class MovieInfoAdapter: Adapter<MovieInfoAdapter.MovieInfoViewHolder>(){
 
         private var currentMovieInfo: MovieInfo? = null
 
-        fun bind(movieInfo: MovieInfo){
-            currentMovieInfo = movieInfo
-            movie_image.text = movieInfo.movie_image
-        }
+        fun bind(movieInfo: MovieInfo){}
     }
 }
