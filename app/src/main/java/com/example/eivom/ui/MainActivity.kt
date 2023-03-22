@@ -2,78 +2,32 @@ package com.example.eivom.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import com.example.eivom.R
-import com.example.eivom.data.MovieInfo
-
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.navigateUp
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var appBarConfig : AppBarConfiguration
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val ActionmovieListRV: RecyclerView = findViewById(R.id.rv_action_movie_info_list)
-        ActionmovieListRV.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        ActionmovieListRV.setHasFixedSize(true)
+        val navHostFragment = supportFragmentManager.findFragmentById(
+            R.id.nav_host_fragment
+        )as NavHostFragment
 
-        val ActionAdapter = ActionMovieInfoAdapter()
-        ActionmovieListRV.adapter = ActionAdapter
+        val navController = navHostFragment.navController
 
-        ActionAdapter.addMovieInfo(
-            MovieInfo(
-                "Movie Image 4"
-            )
-        )
+        appBarConfig = AppBarConfiguration(navController.graph)
 
-        ActionAdapter.addMovieInfo(
-            MovieInfo(
-                "Movie Image 3"
-            )
-        )
+        setupActionBarWithNavController(navController, appBarConfig)
+    }
 
-        ActionAdapter.addMovieInfo(
-            MovieInfo(
-                "Movie Image 2"
-            )
-        )
-
-        ActionAdapter.addMovieInfo(
-            MovieInfo(
-                "Movie Image 1"
-            )
-        )
-
-        val ComedyMovieListRV: RecyclerView = findViewById(R.id.rv_comedy_movie_info_list)
-        ComedyMovieListRV.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        ComedyMovieListRV.setHasFixedSize(true)
-
-        val ComedyAdapter = ComedyMovieInfoAdapter()
-        ComedyMovieListRV.adapter = ComedyAdapter
-
-        ComedyAdapter.addMovieInfo(
-            MovieInfo(
-                "Movie Image 4"
-            )
-        )
-
-        ComedyAdapter.addMovieInfo(
-            MovieInfo(
-                "Movie Image 3"
-            )
-        )
-
-        ComedyAdapter.addMovieInfo(
-            MovieInfo(
-                "Movie Image 2"
-            )
-        )
-
-        ComedyAdapter.addMovieInfo(
-            MovieInfo(
-                "Movie Image 1"
-            )
-        )
-
-
+    override fun onSupportNavigateUp(): Boolean{
+        val navController = findNavController(R.id.nav_host_fragment)
+        return navController.navigateUp(appBarConfig) || super.onSupportNavigateUp()
     }
 }
