@@ -4,15 +4,17 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eivom.R
+import com.example.eivom.data.MovieInfo
 import com.google.android.material.progressindicator.CircularProgressIndicator
 
 class MovieInfoFragment : Fragment() {
     private val TAG = "LANDINGPAGEFRAGMENT"
 
-//    private val landingPageViewModel : LandingPageViewModel by viewModels()
+    private val movieInfoViewModel : MovieInfoViewModel by viewModels()
 //    private val landingPageAdapter = LandingPageAdapter(::onLandingPageItemClick)
 
     private lateinit var landingPageRV : RecyclerView
