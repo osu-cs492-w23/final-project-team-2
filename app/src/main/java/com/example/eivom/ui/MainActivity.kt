@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView.OnItemClickListener
+import android.widget.ImageButton
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.eivom.R
@@ -25,6 +26,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.movie_info_test)
+
+        val imageButton = findViewById<ImageButton>(R.id.moviePoster1)
+        imageButton.setOnClickListener {
+            Log.d(TAG, "Movie poster clicked")
+        }
+
 
 //        val navHostFragment = supportFragmentManager.findFragmentById(
 //            R.id.nav_host_fragment
