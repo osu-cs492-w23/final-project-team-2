@@ -17,7 +17,7 @@ class MovieInfoAdapter(private val onClick: (MovieList) -> Unit): RecyclerView.A
 
     fun updateInfo(info: MovieInfo?) {
         movieInfoList = info?.result ?: listOf()
-        Log.d("MovieInforAdapter", "Data: $movieInfoList")
+        Log.d("MovieInfoAdapter", "Data: $movieInfoList")
         notifyDataSetChanged()
     }
 
