@@ -33,7 +33,7 @@ class MovieInfoFragment : Fragment() {
         loadingIndicator = view.findViewById(R.id.loading_indicator)
 
         movieInfoRV = view.findViewById(R.id.rv_movie_info)
-        movieInfoRV.layoutManager = LinearLayoutManager(requireContext())
+        movieInfoRV.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         movieInfoRV.setHasFixedSize(true)
 //        movieInfoRV.adapter = MovieInfoAdapter
 
