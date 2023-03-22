@@ -20,8 +20,6 @@ class MovieInfoFragment : Fragment() {
 
     private val movieInfoViewModel : MovieInfoViewModel by viewModels()
     private val infoAdapter = MovieInfoAdapter(::onInfoItemClick)
-//    private val landingPageAdapter = LandingPageAdapter(::onLandingPageItemClick)
-//    private val movieInfoAdapter = MovieInfoAdapter(::onMovieInfoClick)
 
     private lateinit var movieInfoRV : RecyclerView
     private lateinit var loadingErrorTV : TextView
@@ -44,10 +42,9 @@ class MovieInfoFragment : Fragment() {
         //LandingPageViewModel.observe SECTION
         movieInfoViewModel.info.observe(viewLifecycleOwner){info ->
             if(info != null){
-//                movieInfoAdapter.updatemovieInfo(info)
+                infoAdapter.updateInfo(info)
                 movieInfoRV.visibility = View.VISIBLE
                 movieInfoRV.scrollToPosition(0)
-//                (requireActivity() as AppCompatActivity).supportActionBar?.title = info
             }
         }
 
@@ -72,10 +69,6 @@ class MovieInfoFragment : Fragment() {
 
 
     }
-    private fun onMovieInfoClick(){
-
-    }
-
     override fun onResume() {
         super.onResume()
 
