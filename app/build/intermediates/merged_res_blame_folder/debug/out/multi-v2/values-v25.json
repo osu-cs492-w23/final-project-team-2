@@ -4,7 +4,7 @@
             "outputFile": "com.example.eivom.app-mergeDebugResources-46:/values-v25/values-v25.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Alpha\\.gradle\\caches\\transforms-3\\7bfb54e5d1627dbafe92f9b455ff2224\\transformed\\appcompat-1.6.1\\res\\values-v25\\values-v25.xml",
+                    "source": "/Users/theingmweoo/.gradle/caches/transforms-3/7bfb54e5d1627dbafe92f9b455ff2224/transformed/appcompat-1.6.1/res/values-v25/values-v25.xml",
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",

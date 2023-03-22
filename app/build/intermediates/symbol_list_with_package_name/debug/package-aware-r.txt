@@ -3135,10 +3135,16 @@ id month_navigation_previous
 id month_title
 id motion_base
 id movieCast
+id movieCatTitle1
 id movieDescription
 id movieGenre
 id movieInfo
 id moviePoster
+id moviePoster1
+id moviePoster2
+id moviePoster3
+id moviePoster4
+id moviePoster5
 id movieRating
 id movieTitle
 id movieTrailer
@@ -3518,6 +3524,7 @@ layout material_timepicker_textinput_display
 layout movie_details_activity
 layout movie_info
 layout movie_info_list_item
+layout movie_info_test
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title

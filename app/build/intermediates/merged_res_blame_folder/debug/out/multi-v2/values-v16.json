@@ -4,7 +4,7 @@
             "outputFile": "com.example.eivom.app-mergeDebugResources-46:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Alpha\\.gradle\\caches\\transforms-3\\a4522fe6b275a4534bfc0eadc1a8e0f8\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
+                    "source": "/Users/theingmweoo/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Alpha\\.gradle\\caches\\transforms-3\\7bfb54e5d1627dbafe92f9b455ff2224\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "source": "/Users/theingmweoo/.gradle/caches/transforms-3/7bfb54e5d1627dbafe92f9b455ff2224/transformed/appcompat-1.6.1/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
