@@ -37,7 +37,7 @@ class ActionMovieInfoAdapter: Adapter<ActionMovieInfoAdapter.MovieInfoViewHolder
 
         fun bind(movieInfo: MovieInfo){
             currentMovieInfo = movieInfo
-            movie_image.text = movieInfo.movie_image
+//            movie_image.text = movieInfo.movie_image
         }
     }
 }

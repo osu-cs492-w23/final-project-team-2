@@ -4,13 +4,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.eivom.R
 import com.example.eivom.data.MovieInfo
+import com.example.eivom.data.MovieList
 
-class MovieInfoAdapter: Adapter<MovieInfoAdapter.MovieInfoViewHolder>(){
-    val movieInfoList: MutableList<MovieInfo> = mutableListOf()
+class MovieInfoAdapter(private val onClick: (MovieList) -> Unit): RecyclerView.Adapter<MovieInfoAdapter.MovieInfoViewHolder>(){
+    var movieInfoList: List<MovieList> = listOf()
+
+    fun updateInfo(info: MovieInfo?) {
+        movieInfoList = info?.result ?: listOf()
+        notifyDataSetChanged()
+    }
 
     override fun getItemCount() = movieInfoList.size
 
@@ -18,23 +25,19 @@ class MovieInfoAdapter: Adapter<MovieInfoAdapter.MovieInfoViewHolder>(){
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.movie_info_list_item, parent, false)
 
-        return MovieInfoViewHolder(view)
+        return MovieInfoViewHolder(view, onClick)
     }
 
     override fun onBindViewHolder(holder: MovieInfoViewHolder, position: Int) {
         holder.bind(movieInfoList[position])
     }
 
-    fun addMovieInfo(movieInfo: MovieInfo){
-        movieInfoList.add(0, movieInfo)
-        notifyItemInserted(0)
-    }
+    class MovieInfoViewHolder(view: View, val onClick: (MovieList) -> Unit): RecyclerView.ViewHolder(view){
 
-    class MovieInfoViewHolder(view: View): ViewHolder(view){
-        private val movie_image: TextView = view.findViewById(R.id.movie_image)
+        private var currentMovieInfo: MovieList? = null
 
-        private var currentMovieInfo: MovieInfo? = null
-
-        fun bind(movieInfo: MovieInfo){}
+        fun bind(movieInfo: MovieList){
+            currentMovieInfo = movieInfo
+        }
     }
 }

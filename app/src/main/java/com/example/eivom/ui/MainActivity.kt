@@ -8,6 +8,10 @@ import com.example.eivom.R
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.navigateUp
+
+
+const val MOVIEDATABASE_APPID = "9b548beeca2515183884381852406153"
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfig : AppBarConfiguration

@@ -7,16 +7,20 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eivom.R
 import com.example.eivom.data.MovieInfo
+import com.example.eivom.data.MovieList
 import com.google.android.material.progressindicator.CircularProgressIndicator
 
 class MovieInfoFragment : Fragment() {
     private val TAG = "MovieInfoFragment"
 
     private val movieInfoViewModel : MovieInfoViewModel by viewModels()
+    private val infoAdapter = MovieInfoAdapter(::onInfoItemClick)
+//    private val landingPageAdapter = LandingPageAdapter(::onLandingPageItemClick)
 //    private val movieInfoAdapter = MovieInfoAdapter(::onMovieInfoClick)
 
     private lateinit var movieInfoRV : RecyclerView
@@ -68,14 +72,18 @@ class MovieInfoFragment : Fragment() {
 
 
     }
-
-    override fun onResume(){
-        super.onResume()
-
+    private fun onMovieInfoClick(){
 
     }
 
-    private fun onMovieInfoClick(){
+    override fun onResume() {
+        super.onResume()
 
+        movieInfoViewModel.loadMovieInfo(MOVIEDATABASE_APPID)
+    }
+
+    private fun onInfoItemClick(list: MovieList) {
+//        val directions = MainActivityFragmentDirections.navigateToForecastDetail(forecastPeriod, forecastAdapter.forecastCity!!)
+//        findNavController().navigate(directions)
     }
 }
