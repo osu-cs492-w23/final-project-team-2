@@ -17,7 +17,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "MOVIEDATABASE_API_KEY", MOVIEDATABASE_API_KEY)
+//        buildConfigField("String", "MOVIEDATABASE_API_KEY", MOVIEDATABASE_API_KEY)
     }
 
     buildTypes {
