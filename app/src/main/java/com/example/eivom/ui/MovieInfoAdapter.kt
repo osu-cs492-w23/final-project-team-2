@@ -1,5 +1,6 @@
 package com.example.eivom.ui
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +17,7 @@ class MovieInfoAdapter(private val onClick: (MovieList) -> Unit): RecyclerView.A
 
     fun updateInfo(info: MovieInfo?) {
         movieInfoList = info?.result ?: listOf()
+        Log.d("MovieInfoAdapter", "Data: $movieInfoList")
         notifyDataSetChanged()
     }
 

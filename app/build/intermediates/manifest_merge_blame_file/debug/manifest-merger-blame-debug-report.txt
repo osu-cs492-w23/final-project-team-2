@@ -6,96 +6,100 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="24"
-8-->/Users/theingmweoo/Desktop/final-project-team-2/app/src/main/AndroidManifest.xml
+8-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="33" />
-9-->/Users/theingmweoo/Desktop/final-project-team-2/app/src/main/AndroidManifest.xml
+9-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml
 10
-11    <permission
-11-->[androidx.core:core:1.9.0] /Users/theingmweoo/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
-12        android:name="com.example.eivom.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-12-->[androidx.core:core:1.9.0] /Users/theingmweoo/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
-13        android:protectionLevel="signature" />
-13-->[androidx.core:core:1.9.0] /Users/theingmweoo/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
-14
-15    <uses-permission android:name="com.example.eivom.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-15-->[androidx.core:core:1.9.0] /Users/theingmweoo/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
-15-->[androidx.core:core:1.9.0] /Users/theingmweoo/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml:5:22-64
+12
+13    <permission
+13-->[androidx.core:core:1.9.0] C:\Users\NICKSON\.gradle\caches\transforms-3\a4522fe6b275a4534bfc0eadc1a8e0f8\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+14        android:name="com.example.eivom.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+14-->[androidx.core:core:1.9.0] C:\Users\NICKSON\.gradle\caches\transforms-3\a4522fe6b275a4534bfc0eadc1a8e0f8\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+15        android:protectionLevel="signature" />
+15-->[androidx.core:core:1.9.0] C:\Users\NICKSON\.gradle\caches\transforms-3\a4522fe6b275a4534bfc0eadc1a8e0f8\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
 16
-17    <application
-17-->/Users/theingmweoo/Desktop/final-project-team-2/app/src/main/AndroidManifest.xml:5:5-24:19
-18        android:allowBackup="true"
-18-->/Users/theingmweoo/Desktop/final-project-team-2/app/src/main/AndroidManifest.xml:6:9-35
-19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-19-->[androidx.core:core:1.9.0] /Users/theingmweoo/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
-20        android:dataExtractionRules="@xml/data_extraction_rules"
-20-->/Users/theingmweoo/Desktop/final-project-team-2/app/src/main/AndroidManifest.xml:7:9-65
-21        android:debuggable="true"
-22        android:extractNativeLibs="false"
-23        android:fullBackupContent="@xml/backup_rules"
-23-->/Users/theingmweoo/Desktop/final-project-team-2/app/src/main/AndroidManifest.xml:8:9-54
-24        android:icon="@mipmap/ic_launcher"
-24-->/Users/theingmweoo/Desktop/final-project-team-2/app/src/main/AndroidManifest.xml:9:9-43
-25        android:label="@string/app_name"
-25-->/Users/theingmweoo/Desktop/final-project-team-2/app/src/main/AndroidManifest.xml:10:9-41
-26        android:supportsRtl="true"
-26-->/Users/theingmweoo/Desktop/final-project-team-2/app/src/main/AndroidManifest.xml:11:9-35
-27        android:testOnly="true"
-28        android:theme="@style/Theme.Eivom" >
-28-->/Users/theingmweoo/Desktop/final-project-team-2/app/src/main/AndroidManifest.xml:12:9-43
-29        <activity
-29-->/Users/theingmweoo/Desktop/final-project-team-2/app/src/main/AndroidManifest.xml:14:9-23:20
-30            android:name="com.example.eivom.ui.MainActivity"
-30-->/Users/theingmweoo/Desktop/final-project-team-2/app/src/main/AndroidManifest.xml:15:13-44
-31            android:exported="true"
-31-->/Users/theingmweoo/Desktop/final-project-team-2/app/src/main/AndroidManifest.xml:17:13-36
-32            android:launchMode="singleTop" >
-32-->/Users/theingmweoo/Desktop/final-project-team-2/app/src/main/AndroidManifest.xml:16:13-43
-33            <intent-filter>
-33-->/Users/theingmweoo/Desktop/final-project-team-2/app/src/main/AndroidManifest.xml:18:13-22:29
-34                <action android:name="android.intent.action.MAIN" />
-34-->/Users/theingmweoo/Desktop/final-project-team-2/app/src/main/AndroidManifest.xml:19:17-69
-34-->/Users/theingmweoo/Desktop/final-project-team-2/app/src/main/AndroidManifest.xml:19:25-66
-35
-36                <category android:name="android.intent.category.LAUNCHER" />
-36-->/Users/theingmweoo/Desktop/final-project-team-2/app/src/main/AndroidManifest.xml:21:17-77
-36-->/Users/theingmweoo/Desktop/final-project-team-2/app/src/main/AndroidManifest.xml:21:27-74
-37            </intent-filter>
-38        </activity>
-39
-40        <uses-library
-40-->[androidx.window:window:1.0.0] /Users/theingmweoo/.gradle/caches/transforms-3/c3b734b042e3e1a43ac97bcab800c2b5/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
-41            android:name="androidx.window.extensions"
-41-->[androidx.window:window:1.0.0] /Users/theingmweoo/.gradle/caches/transforms-3/c3b734b042e3e1a43ac97bcab800c2b5/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
-42            android:required="false" />
-42-->[androidx.window:window:1.0.0] /Users/theingmweoo/.gradle/caches/transforms-3/c3b734b042e3e1a43ac97bcab800c2b5/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
-43        <uses-library
-43-->[androidx.window:window:1.0.0] /Users/theingmweoo/.gradle/caches/transforms-3/c3b734b042e3e1a43ac97bcab800c2b5/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
-44            android:name="androidx.window.sidecar"
-44-->[androidx.window:window:1.0.0] /Users/theingmweoo/.gradle/caches/transforms-3/c3b734b042e3e1a43ac97bcab800c2b5/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
-45            android:required="false" />
-45-->[androidx.window:window:1.0.0] /Users/theingmweoo/.gradle/caches/transforms-3/c3b734b042e3e1a43ac97bcab800c2b5/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
-46
-47        <provider
-47-->[androidx.emoji2:emoji2:1.2.0] /Users/theingmweoo/.gradle/caches/transforms-3/c41b4469453a8a9f9613e5cbc1cd1923/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
-48            android:name="androidx.startup.InitializationProvider"
-48-->[androidx.emoji2:emoji2:1.2.0] /Users/theingmweoo/.gradle/caches/transforms-3/c41b4469453a8a9f9613e5cbc1cd1923/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
-49            android:authorities="com.example.eivom.androidx-startup"
-49-->[androidx.emoji2:emoji2:1.2.0] /Users/theingmweoo/.gradle/caches/transforms-3/c41b4469453a8a9f9613e5cbc1cd1923/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
-50            android:exported="false" >
-50-->[androidx.emoji2:emoji2:1.2.0] /Users/theingmweoo/.gradle/caches/transforms-3/c41b4469453a8a9f9613e5cbc1cd1923/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
-51            <meta-data
-51-->[androidx.emoji2:emoji2:1.2.0] /Users/theingmweoo/.gradle/caches/transforms-3/c41b4469453a8a9f9613e5cbc1cd1923/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
-52                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-52-->[androidx.emoji2:emoji2:1.2.0] /Users/theingmweoo/.gradle/caches/transforms-3/c41b4469453a8a9f9613e5cbc1cd1923/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
-53                android:value="androidx.startup" />
-53-->[androidx.emoji2:emoji2:1.2.0] /Users/theingmweoo/.gradle/caches/transforms-3/c41b4469453a8a9f9613e5cbc1cd1923/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
-54            <meta-data
-54-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/theingmweoo/.gradle/caches/transforms-3/528f10946969151ddeecc9c08cbfcbae/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
-55                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-55-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/theingmweoo/.gradle/caches/transforms-3/528f10946969151ddeecc9c08cbfcbae/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
-56                android:value="androidx.startup" />
-56-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/theingmweoo/.gradle/caches/transforms-3/528f10946969151ddeecc9c08cbfcbae/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
-57        </provider>
-58    </application>
-59
-60</manifest>
+17    <uses-permission android:name="com.example.eivom.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+17-->[androidx.core:core:1.9.0] C:\Users\NICKSON\.gradle\caches\transforms-3\a4522fe6b275a4534bfc0eadc1a8e0f8\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+17-->[androidx.core:core:1.9.0] C:\Users\NICKSON\.gradle\caches\transforms-3\a4522fe6b275a4534bfc0eadc1a8e0f8\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+18
+19    <application
+19-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml:7:5-26:19
+20        android:allowBackup="true"
+20-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml:8:9-35
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.9.0] C:\Users\NICKSON\.gradle\caches\transforms-3\a4522fe6b275a4534bfc0eadc1a8e0f8\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+22        android:dataExtractionRules="@xml/data_extraction_rules"
+22-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml:9:9-65
+23        android:debuggable="true"
+24        android:extractNativeLibs="false"
+25        android:fullBackupContent="@xml/backup_rules"
+25-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml:10:9-54
+26        android:icon="@mipmap/ic_launcher"
+26-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml:11:9-43
+27        android:label="@string/app_name"
+27-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml:12:9-41
+28        android:supportsRtl="true"
+28-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml:13:9-35
+29        android:testOnly="true"
+30        android:theme="@style/Theme.Eivom" >
+30-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml:14:9-43
+31        <activity
+31-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml:16:9-25:20
+32            android:name="com.example.eivom.ui.MainActivity"
+32-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml:17:13-44
+33            android:exported="true"
+33-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml:19:13-36
+34            android:launchMode="singleTop" >
+34-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml:18:13-43
+35            <intent-filter>
+35-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml:20:13-24:29
+36                <action android:name="android.intent.action.MAIN" />
+36-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml:21:17-69
+36-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml:21:25-66
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml:23:17-77
+38-->C:\Users\NICKSON\AndroidStudioProjects\Final Project\final-project-team-2\app\src\main\AndroidManifest.xml:23:27-74
+39            </intent-filter>
+40        </activity>
+41
+42        <uses-library
+42-->[androidx.window:window:1.0.0] C:\Users\NICKSON\.gradle\caches\transforms-3\c3b734b042e3e1a43ac97bcab800c2b5\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+43            android:name="androidx.window.extensions"
+43-->[androidx.window:window:1.0.0] C:\Users\NICKSON\.gradle\caches\transforms-3\c3b734b042e3e1a43ac97bcab800c2b5\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+44            android:required="false" />
+44-->[androidx.window:window:1.0.0] C:\Users\NICKSON\.gradle\caches\transforms-3\c3b734b042e3e1a43ac97bcab800c2b5\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+45        <uses-library
+45-->[androidx.window:window:1.0.0] C:\Users\NICKSON\.gradle\caches\transforms-3\c3b734b042e3e1a43ac97bcab800c2b5\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+46            android:name="androidx.window.sidecar"
+46-->[androidx.window:window:1.0.0] C:\Users\NICKSON\.gradle\caches\transforms-3\c3b734b042e3e1a43ac97bcab800c2b5\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+47            android:required="false" />
+47-->[androidx.window:window:1.0.0] C:\Users\NICKSON\.gradle\caches\transforms-3\c3b734b042e3e1a43ac97bcab800c2b5\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+48
+49        <provider
+49-->[androidx.emoji2:emoji2:1.2.0] C:\Users\NICKSON\.gradle\caches\transforms-3\c41b4469453a8a9f9613e5cbc1cd1923\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+50            android:name="androidx.startup.InitializationProvider"
+50-->[androidx.emoji2:emoji2:1.2.0] C:\Users\NICKSON\.gradle\caches\transforms-3\c41b4469453a8a9f9613e5cbc1cd1923\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+51            android:authorities="com.example.eivom.androidx-startup"
+51-->[androidx.emoji2:emoji2:1.2.0] C:\Users\NICKSON\.gradle\caches\transforms-3\c41b4469453a8a9f9613e5cbc1cd1923\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+52            android:exported="false" >
+52-->[androidx.emoji2:emoji2:1.2.0] C:\Users\NICKSON\.gradle\caches\transforms-3\c41b4469453a8a9f9613e5cbc1cd1923\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+53            <meta-data
+53-->[androidx.emoji2:emoji2:1.2.0] C:\Users\NICKSON\.gradle\caches\transforms-3\c41b4469453a8a9f9613e5cbc1cd1923\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+54                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+54-->[androidx.emoji2:emoji2:1.2.0] C:\Users\NICKSON\.gradle\caches\transforms-3\c41b4469453a8a9f9613e5cbc1cd1923\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+55                android:value="androidx.startup" />
+55-->[androidx.emoji2:emoji2:1.2.0] C:\Users\NICKSON\.gradle\caches\transforms-3\c41b4469453a8a9f9613e5cbc1cd1923\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+56            <meta-data
+56-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\NICKSON\.gradle\caches\transforms-3\528f10946969151ddeecc9c08cbfcbae\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+57                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+57-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\NICKSON\.gradle\caches\transforms-3\528f10946969151ddeecc9c08cbfcbae\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+58                android:value="androidx.startup" />
+58-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\NICKSON\.gradle\caches\transforms-3\528f10946969151ddeecc9c08cbfcbae\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+59        </provider>
+60    </application>
+61
+62</manifest>
