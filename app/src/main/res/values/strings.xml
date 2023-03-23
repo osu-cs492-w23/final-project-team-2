@@ -7,4 +7,7 @@
     //Fragment Labels
     <string name="label_movie_info">Eivom</string>
     <string name="label_movie_detail">Movie Detail</string>
+    <string name="label_category_trending">Trending</string>
+    <string name="label_category_action">Action</string>
+    <string name="label_category_comedy">Comedy</string>
 </resources>
