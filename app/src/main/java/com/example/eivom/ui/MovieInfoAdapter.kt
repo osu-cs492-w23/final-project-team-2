@@ -16,7 +16,9 @@ import com.example.eivom.data.MovieInfo
 import com.example.eivom.data.MovieList
 import org.w3c.dom.Text
 
-class MovieInfoAdapter(private val onClick: (MovieList) -> Unit): RecyclerView.Adapter<MovieInfoAdapter.MovieInfoViewHolder>(){
+class MovieInfoAdapter(
+    private val onClick: (MovieList) -> Unit
+): RecyclerView.Adapter<MovieInfoAdapter.MovieInfoViewHolder>(){
     var movieInfoList: List<MovieList> = listOf()
 
     fun updateInfo(info: MovieInfo?) {
@@ -40,8 +42,6 @@ class MovieInfoAdapter(private val onClick: (MovieList) -> Unit): RecyclerView.A
 
     class MovieInfoViewHolder(itemView: View, val onClick: (MovieList) -> Unit): ViewHolder(itemView){
 
-        private val overview: TextView = itemView.findViewById(R.id.overview)
-        private val title: TextView = itemView.findViewById(R.id.title)
         private val posterTV: ImageView = itemView.findViewById(R.id.movie_poster)
 
         private lateinit var currentMovieInfo: MovieList
@@ -60,10 +60,6 @@ class MovieInfoAdapter(private val onClick: (MovieList) -> Unit): RecyclerView.A
             val ctx = itemView.context
 
             currentMovieInfo = movieList
-
-//            overview.text = movieList.overview
-//            title.text = movieList.title
-//            posterTV.text = movieList.poster_path
 
             Glide.with(ctx)
                 .load(movieList.poster_path)
