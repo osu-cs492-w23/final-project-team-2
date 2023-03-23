@@ -6,7 +6,7 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.eivom.data.AppDatabase
 import com.example.eivom.data.FavoriteMovieRepository
-import com.example.eivom.data.FavoriteMovies
+import com.example.eivom.data.MovieList
 import kotlinx.coroutines.launch
 
 class FavoriteMoviesViewModel(application: Application): AndroidViewModel(application) {
@@ -16,15 +16,17 @@ class FavoriteMoviesViewModel(application: Application): AndroidViewModel(applic
 
     val favoriteMovies = repository.getAllFavoriteMovies().asLiveData()
 
-    fun addFavoriteMovie(movie: FavoriteMovies) {
+    fun addFavoriteMovie(movie: MovieList) {
         viewModelScope.launch {
             repository.insertFavoriteMovie(movie)
         }
     }
 
-    fun removeFavoriteMovie(movie: FavoriteMovies) {
+    fun removeFavoriteMovie(movie: MovieList) {
         viewModelScope.launch {
             repository.deleteFavoriteMovie(movie)
         }
     }
+
+    fun getMovieByName(name: String) = repository.getMovieByName(name).asLiveData()
 }
