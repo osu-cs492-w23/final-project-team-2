@@ -7,20 +7,22 @@
 
     <ImageView
         android:id="@+id/moviePoster"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="158dp"
+        android:layout_height="201dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="@+id/movieTitle"
         app:layout_constraintTop_toBottomOf="@+id/movieTitle"
         app:srcCompat="@drawable/sample_movie_poster" />
 
     <TextView
         android:id="@+id/movieTitle"
-        android:layout_width="178dp"
+        android:layout_width="wrap_content"
         android:layout_height="34dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
-        android:text="TextView"
+        android:text="movieTitle"
+        android:textColor="@color/black"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,7 +31,8 @@
         android:layout_width="186dp"
         android:layout_height="99dp"
         android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:text="movieDescription"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/movieRating"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/movieRating"
@@ -54,7 +57,8 @@
         android:layout_width="184dp"
         android:layout_height="58dp"
         android:layout_marginTop="4dp"
-        android:text="TextView"
+        android:text="movieCast"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/movieGenre"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/movieGenre"
@@ -65,7 +69,8 @@
         android:layout_width="149dp"
         android:layout_height="34dp"
         android:layout_marginTop="32dp"
-        android:text="TextView"
+        android:text="trailerTitle"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/likeButton"
         app:layout_constraintTop_toBottomOf="@+id/likeButton" />
 
@@ -74,7 +79,8 @@
         android:layout_width="185dp"
         android:layout_height="35dp"
         android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:text="movieGenre"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/movieDescription"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/movieDescription"
@@ -86,7 +92,8 @@
         android:layout_height="45dp"
         android:layout_marginTop="88dp"
         android:layout_marginEnd="28dp"
-        android:text="TextView"
+        android:text="movieRating"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
