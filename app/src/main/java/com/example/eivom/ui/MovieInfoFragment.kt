@@ -66,8 +66,6 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
                 loadingIndicator.visibility = View.INVISIBLE
             }
         }
-
-
     }
     override fun onResume() {
         super.onResume()
@@ -76,7 +74,7 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
     }
 
     private fun onInfoItemClick(list: MovieList) {
-//        val directions = MainActivityFragmentDirections.navigateToForecastDetail(forecastPeriod, forecastAdapter.forecastCity!!)
-//        findNavController().navigate(directions)
+        val directions = MovieInfoFragmentDirections.navigateToMovieDetail(list)
+        findNavController().navigate(directions)
     }
 }

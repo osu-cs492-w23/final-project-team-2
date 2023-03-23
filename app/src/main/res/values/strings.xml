@@ -5,5 +5,6 @@
     <string name="loading_error">Unable to fetch Movie data.  Error message: %1$s</string>
 
     //Fragment Labels
-    <string name="label_movie_info">Movie Info</string>
+    <string name="label_movie_info">Eivom</string>
+    <string name="label_movie_detail">Movie Detail</string>
 </resources>
