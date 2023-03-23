@@ -38,14 +38,19 @@
         app:layout_constraintStart_toStartOf="@+id/movieRating"
         app:layout_constraintTop_toBottomOf="@+id/movieRating" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/likeButton"
-        android:layout_width="150dp"
-        android:layout_height="41dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Button"
+        android:gravity="center"
+        android:textAllCaps="true"
+        app:icon="@drawable/ic_not_favorite_36"
+        app:iconGravity="textStart"
+        app:iconTint="#fff"
         app:layout_constraintStart_toStartOf="@+id/moviePoster"
-        app:layout_constraintTop_toBottomOf="@+id/moviePoster" />
+        app:layout_constraintTop_toBottomOf="@+id/moviePoster"
+        android:text="Like"/>
 
     <TextView
         android:id="@+id/movieCast"

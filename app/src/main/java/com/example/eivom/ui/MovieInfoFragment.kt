@@ -4,14 +4,14 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eivom.R
-import com.example.eivom.data.*
+import com.example.eivom.data.MovieList
+
 import com.google.android.material.progressindicator.CircularProgressIndicator
 
 class MovieInfoFragment : Fragment(R.layout.movie_info) {
@@ -63,7 +63,7 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
         //MOVIEINFOVIEWMODEL
         movieInfoViewModel.info.observe(viewLifecycleOwner){info ->
             if(info != null){
-                infoAdapter.updateInfo(info)
+                infoAdapter.updateInfo(info.result)
                 movieInfoRV.visibility = View.VISIBLE
                 movieInfoRV.scrollToPosition(0)
             }

@@ -8,11 +8,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.example.eivom.R
-import com.example.eivom.data.MovieInfo
 import com.example.eivom.data.MovieList
 import org.w3c.dom.Text
 
@@ -21,8 +19,8 @@ class MovieInfoAdapter(
 ): RecyclerView.Adapter<MovieInfoAdapter.MovieInfoViewHolder>(){
     var movieInfoList: List<MovieList> = listOf()
 
-    fun updateInfo(info: MovieInfo?) {
-        movieInfoList = info?.result ?: listOf()
+    fun updateInfo(info: List<MovieList>?) {
+        movieInfoList = info ?: listOf()
         Log.d("MovieInfoAdapter", "Data: $movieInfoList")
         notifyDataSetChanged()
     }
