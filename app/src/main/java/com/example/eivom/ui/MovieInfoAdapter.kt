@@ -38,13 +38,23 @@ class MovieInfoAdapter(private val onClick: (MovieList) -> Unit): RecyclerView.A
         holder.bind(movieInfoList[position])
     }
 
-    class MovieInfoViewHolder(view: View, val onClick: (MovieList) -> Unit): RecyclerView.ViewHolder(view){
+    class MovieInfoViewHolder(itemView: View, val onClick: (MovieList) -> Unit): ViewHolder(itemView){
 
         private val overview: TextView = itemView.findViewById(R.id.overview)
         private val title: TextView = itemView.findViewById(R.id.title)
         private val posterTV: ImageView = itemView.findViewById(R.id.movie_poster)
 
-        private var currentMovieInfo: MovieList? = null
+        private lateinit var currentMovieInfo: MovieList
+
+        /*
+         * Set up a click listener on this individual ViewHolder.  Call the provided onClick
+         * function, passing the forecast item represented by this ViewHolder as an argument.
+         */
+        init {
+            itemView.setOnClickListener {
+                currentMovieInfo.let(onClick)
+            }
+        }
 
         fun bind(movieList: MovieList){
             val ctx = itemView.context
