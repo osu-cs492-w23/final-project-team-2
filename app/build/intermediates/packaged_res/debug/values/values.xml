@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">Eivom</string>
     <string name="label_movie_info">Movie Info</string>
-    <string name="loading_error">Unable to fetch forecast data.  Error message: %1$s</string>
+    <string name="loading_error">Unable to fetch Movie data.  Error message: %1$s</string>
     <style name="Theme.Eivom" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         
         <item name="colorPrimary">@color/purple_500</item>

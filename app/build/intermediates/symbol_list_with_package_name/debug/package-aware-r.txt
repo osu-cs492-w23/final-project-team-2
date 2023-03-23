@@ -3148,7 +3148,7 @@ id moviePoster5
 id movieRating
 id movieTitle
 id movieTrailer
-id movie_image
+id movie_poster
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
 id mtrl_calendar_days_of_week
@@ -3200,6 +3200,7 @@ id onInterceptTouchReturnSwipe
 id outline
 id outward
 id overshoot
+id overview
 id packed
 id parallax
 id parent

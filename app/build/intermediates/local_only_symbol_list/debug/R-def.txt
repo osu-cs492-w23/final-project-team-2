@@ -31,8 +31,9 @@ id moviePoster5
 id movieRating
 id movieTitle
 id movieTrailer
-id movie_image
+id movie_poster
 id nav_host_fragment
+id overview
 id rv_movie_info
 id trailerTitle
 id tv_loading_error

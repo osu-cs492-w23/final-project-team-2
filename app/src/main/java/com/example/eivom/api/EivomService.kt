@@ -1,6 +1,8 @@
 package com.example.eivom.api
 
+import com.example.eivom.data.EivomListJsonAdapter
 import com.example.eivom.data.MovieInfo
+import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import retrofit2.Call
 import retrofit2.Response
@@ -13,9 +15,9 @@ import retrofit2.http.Query
  * This is a Retrofit service interface encapsulating communication with the OpenWeather API.
  */
 interface EivomService {
-    @GET("trending/movie/week")
+    @GET("/trending/movie/week")
     suspend fun loadMovieList(
-        @Query("api_key") apiKey: String = "1f89bc62d244a63f91c60d7a7381ebd3"
+        @Query("api_key") apiKey: String
     ) : Response<MovieInfo>
 
     companion object {
@@ -28,6 +30,7 @@ interface EivomService {
          */
         fun create() : EivomService {
             val moshi = Moshi.Builder()
+                .add(EivomListJsonAdapter())
                 .build()
             return Retrofit.Builder()
                 .baseUrl(BASE_URL)

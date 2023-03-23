@@ -14,18 +14,24 @@ class MovieInfoRepository(
     suspend fun loadMovieInfo(
         apiKey: String
     ) : Result<MovieInfo?> {
-        return withContext(ioDispatcher) {
-            try {
-                val response = service.loadMovieList(apiKey)
-                if (response.isSuccessful) {
-                    cachedList = response.body()
-                    Result.success(cachedList)
-                } else {
-                    Result.failure(Exception(response.errorBody()?.string()))
+        return if(cachedList != null){
+            Result.success(cachedList)
+        }
+        else{
+            withContext(ioDispatcher) {
+                try {
+                    val response = service.loadMovieList(apiKey)
+                    if (response.isSuccessful) {
+                        cachedList = response.body()
+                        Result.success(cachedList)
+                    } else {
+                        Result.failure(Exception(response.errorBody()?.string()))
+                    }
+                } catch (e: Exception) {
+                    Result.failure(e)
                 }
-            } catch (e: Exception) {
-                Result.failure(e)
             }
+
         }
     }
 }

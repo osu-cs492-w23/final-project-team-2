@@ -2,7 +2,7 @@
     <string name="app_name">Eivom</string>
 
     //Error
-    <string name="loading_error">Unable to fetch forecast data.  Error message: %1$s</string>
+    <string name="loading_error">Unable to fetch Movie data.  Error message: %1$s</string>
 
     //Fragment Labels
     <string name="label_movie_info">Movie Info</string>

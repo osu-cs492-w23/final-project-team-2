@@ -4,10 +4,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.bumptech.glide.Glide
 import com.example.eivom.R
 import com.example.eivom.data.MovieInfo
 import com.example.eivom.data.MovieList
@@ -36,10 +38,22 @@ class MovieInfoAdapter(private val onClick: (MovieList) -> Unit): RecyclerView.A
 
     class MovieInfoViewHolder(view: View, val onClick: (MovieList) -> Unit): RecyclerView.ViewHolder(view){
 
+//        private val posterTV: ImageView = itemView.findViewById(R.id.movie_poster)
+        private val overview: TextView = itemView.findViewById(R.id.overview)
+
         private var currentMovieInfo: MovieList? = null
 
-        fun bind(movieInfo: MovieList){
-            currentMovieInfo = movieInfo
+        fun bind(movieList: MovieList){
+            val ctx = itemView.context
+
+            currentMovieInfo = movieList
+            overview.text = movieList.overview
+
+
+//            Glide.with(ctx)
+//                .load(movieList.poster_path)
+//                .into(posterTV)
+
         }
     }
 }

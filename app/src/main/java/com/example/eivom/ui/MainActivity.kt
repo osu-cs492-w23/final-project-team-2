@@ -25,23 +25,23 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfig : AppBarConfiguration
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.movie_info_test)
+        setContentView(R.layout.activity_main)
 
-        val imageButton = findViewById<ImageButton>(R.id.moviePoster1)
-        imageButton.setOnClickListener {
-            Log.d(TAG, "Movie poster clicked")
-        }
+//        val imageButton = findViewById<ImageButton>(R.id.moviePoster1)
+//        imageButton.setOnClickListener {
+//            Log.d(TAG, "Movie poster clicked")
+//        }
 
 
-//        val navHostFragment = supportFragmentManager.findFragmentById(
-//            R.id.nav_host_fragment
-//        )as NavHostFragment
+        val navHostFragment = supportFragmentManager.findFragmentById(
+            R.id.nav_host_fragment
+        )as NavHostFragment
 
-//        val navController = navHostFragment.navController
+        val navController = navHostFragment.navController
 
-//        appBarConfig = AppBarConfiguration(navController.graph)
-//
-//        setupActionBarWithNavController(navController, appBarConfig)
+        appBarConfig = AppBarConfiguration(navController.graph)
+
+        setupActionBarWithNavController(navController, appBarConfig)
     }
 
     private fun onMoviePosterClick(detail: MovieList) {

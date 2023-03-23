@@ -15,8 +15,9 @@ import com.example.eivom.data.MovieInfo
 import com.example.eivom.data.MovieList
 import com.google.android.material.progressindicator.CircularProgressIndicator
 
-class MovieInfoFragment : Fragment() {
+class MovieInfoFragment : Fragment(R.layout.movie_info) {
     private val TAG = "MovieInfoFragment"
+
 
     private val movieInfoViewModel : MovieInfoViewModel by viewModels()
     private val infoAdapter = MovieInfoAdapter(::onInfoItemClick)
@@ -37,7 +38,7 @@ class MovieInfoFragment : Fragment() {
         movieInfoRV = view.findViewById(R.id.rv_movie_info)
         movieInfoRV.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         movieInfoRV.setHasFixedSize(true)
-//        movieInfoRV.adapter = MovieInfoAdapter
+        movieInfoRV.adapter = infoAdapter
 
         //LandingPageViewModel.observe SECTION
         movieInfoViewModel.info.observe(viewLifecycleOwner){info ->
@@ -52,7 +53,7 @@ class MovieInfoFragment : Fragment() {
             if(error != null){
                 loadingErrorTV.text = getString(R.string.loading_error, error.message)
                 loadingErrorTV.visibility = View.VISIBLE
-                Log.e(TAG, "Error fetching forecast: ${error.message}")
+                Log.e(TAG, "Error fetching MovieDatabase: ${error.message}")
             }
         }
 
@@ -72,7 +73,7 @@ class MovieInfoFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        movieInfoViewModel.loadMovieInfo(MOVIEDATABASE_APPID)
+        movieInfoViewModel.loadMovieInfo("1f89bc62d244a63f91c60d7a7381ebd3")
     }
 
     private fun onInfoItemClick(list: MovieList) {
