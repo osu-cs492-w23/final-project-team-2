@@ -22,6 +22,7 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
     private val infoAdapter = MovieInfoAdapter(::onInfoItemClick)
 
     private lateinit var movieInfoRV : RecyclerView
+    private lateinit var movieInfoRV2 : RecyclerView
     private lateinit var loadingErrorTV : TextView
     private lateinit var loadingIndicator : CircularProgressIndicator
 
@@ -39,12 +40,20 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
         movieInfoRV.setHasFixedSize(true)
         movieInfoRV.adapter = infoAdapter
 
+        movieInfoRV2 = view.findViewById(R.id.rv_movie_info2)
+        movieInfoRV2.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        movieInfoRV2.setHasFixedSize(true)
+        movieInfoRV2.adapter = infoAdapter
+
         //LandingPageViewModel.observe SECTION
         movieInfoViewModel.info.observe(viewLifecycleOwner){info ->
             if(info != null){
                 infoAdapter.updateInfo(info)
                 movieInfoRV.visibility = View.VISIBLE
                 movieInfoRV.scrollToPosition(0)
+
+                movieInfoRV2.visibility = View.VISIBLE
+                movieInfoRV2.scrollToPosition(0)
             }
         }
 
@@ -61,6 +70,7 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
                 loadingIndicator.visibility = View.VISIBLE
                 loadingErrorTV.visibility = View.INVISIBLE
                 movieInfoRV.visibility = View.INVISIBLE
+                movieInfoRV2.visibility = View.INVISIBLE
             }
             else{
                 loadingIndicator.visibility = View.INVISIBLE
