@@ -12,7 +12,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupWithNavController
-import com.example.eivom.data.FavoriteMovies
 import com.example.eivom.data.MovieList
 import com.google.android.material.navigation.NavigationView
 
@@ -48,18 +47,5 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean{
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfig) || super.onSupportNavigateUp()
-    }
-    private fun onFavoriteMoviesClick(){
-        val navView: NavigationView = findViewById(R.id.nav_view)
-        val entriesMenu = navView.menu.findItem(R.id.favoriteMovie)
-        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
-        val intent = Intent(this, FavoriteMovies::class.java)
-
-        entriesMenu.setOnMenuItemClickListener {
-            startActivity(intent)
-            drawerLayout.closeDrawers()
-
-            true
-        }
     }
 }
