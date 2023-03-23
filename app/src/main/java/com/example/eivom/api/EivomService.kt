@@ -15,7 +15,7 @@ import retrofit2.http.Query
  * This is a Retrofit service interface encapsulating communication with the OpenWeather API.
  */
 interface EivomService {
-    @GET("/trending/movie/week")
+    @GET("trending/movie/week")
     suspend fun loadMovieList(
         @Query("api_key") apiKey: String
     ) : Response<MovieInfo>

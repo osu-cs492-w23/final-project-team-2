@@ -22,7 +22,7 @@ import kotlin.text.buildString
 public class MovieInfoJsonAdapter(
   moshi: Moshi,
 ) : JsonAdapter<MovieInfo>() {
-  private val options: JsonReader.Options = JsonReader.Options.of("result")
+  private val options: JsonReader.Options = JsonReader.Options.of("results")
 
   private val listOfMovieListAdapter: JsonAdapter<List<MovieList>> =
       moshi.adapter(Types.newParameterizedType(List::class.java, MovieList::class.java), emptySet(),
@@ -37,7 +37,7 @@ public class MovieInfoJsonAdapter(
     while (reader.hasNext()) {
       when (reader.selectName(options)) {
         0 -> result = listOfMovieListAdapter.fromJson(reader) ?: throw Util.unexpectedNull("result",
-            "result", reader)
+            "results", reader)
         -1 -> {
           // Unknown name, skip it.
           reader.skipName()
@@ -47,7 +47,7 @@ public class MovieInfoJsonAdapter(
     }
     reader.endObject()
     return MovieInfo(
-        result = result ?: throw Util.missingProperty("result", "result", reader)
+        result = result ?: throw Util.missingProperty("result", "results", reader)
     )
   }
 
@@ -56,7 +56,7 @@ public class MovieInfoJsonAdapter(
       throw NullPointerException("value_ was null! Wrap in .nullSafe() to write nullable values.")
     }
     writer.beginObject()
-    writer.name("result")
+    writer.name("results")
     listOfMovieListAdapter.toJson(writer, value_.result)
     writer.endObject()
   }

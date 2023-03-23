@@ -18,7 +18,6 @@ import com.google.android.material.progressindicator.CircularProgressIndicator
 class MovieInfoFragment : Fragment(R.layout.movie_info) {
     private val TAG = "MovieInfoFragment"
 
-
     private val movieInfoViewModel : MovieInfoViewModel by viewModels()
     private val infoAdapter = MovieInfoAdapter(::onInfoItemClick)
 

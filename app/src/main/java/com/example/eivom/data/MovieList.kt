@@ -10,7 +10,7 @@ data class MovieList(
     val overview: String,
     val poster_path: String,
     val release_date: String,
-    val genre: List<Int>
+    val genre_ids: List<Int>
 ): Serializable
 
 @JsonClass(generateAdapter = true)
@@ -19,7 +19,7 @@ data class MovieListJson(
     val overview: String,
     val poster_path: String?,
     val release_date: String,
-    val genre: List<Int>
+    val genre_ids: List<Int>
 )
 
 class EivomListJsonAdapter{
@@ -29,7 +29,7 @@ class EivomListJsonAdapter{
         overview = list.overview,
         poster_path = "https://image.tmdb.org/t/p/w500${list.poster_path}",
         release_date = list.release_date,
-        genre = list.genre
+        genre_ids = list.genre_ids
     )
 
     @ToJson

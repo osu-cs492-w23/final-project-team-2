@@ -38,7 +38,7 @@ class MovieInfoAdapter(private val onClick: (MovieList) -> Unit): RecyclerView.A
 
     class MovieInfoViewHolder(view: View, val onClick: (MovieList) -> Unit): RecyclerView.ViewHolder(view){
 
-//        private val posterTV: ImageView = itemView.findViewById(R.id.movie_poster)
+        private val posterTV: ImageView = itemView.findViewById(R.id.movie_poster)
         private val overview: TextView = itemView.findViewById(R.id.overview)
 
         private var currentMovieInfo: MovieList? = null
@@ -47,12 +47,12 @@ class MovieInfoAdapter(private val onClick: (MovieList) -> Unit): RecyclerView.A
             val ctx = itemView.context
 
             currentMovieInfo = movieList
-            overview.text = movieList.overview
+//            overview.text = movieList.overview
 
 
-//            Glide.with(ctx)
-//                .load(movieList.poster_path)
-//                .into(posterTV)
+            Glide.with(ctx)
+                .load(movieList.poster_path)
+                .into(posterTV)
 
         }
     }

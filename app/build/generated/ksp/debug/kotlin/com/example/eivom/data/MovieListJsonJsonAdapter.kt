@@ -24,7 +24,7 @@ public class MovieListJsonJsonAdapter(
   moshi: Moshi,
 ) : JsonAdapter<MovieListJson>() {
   private val options: JsonReader.Options = JsonReader.Options.of("title", "overview",
-      "poster_path", "release_date", "genre")
+      "poster_path", "release_date", "genre_ids")
 
   private val stringAdapter: JsonAdapter<String> = moshi.adapter(String::class.java, emptySet(),
       "title")
@@ -34,7 +34,7 @@ public class MovieListJsonJsonAdapter(
 
   private val listOfIntAdapter: JsonAdapter<List<Int>> =
       moshi.adapter(Types.newParameterizedType(List::class.java, Int::class.javaObjectType),
-      emptySet(), "genre")
+      emptySet(), "genre_ids")
 
   public override fun toString(): String = buildString(35) {
       append("GeneratedJsonAdapter(").append("MovieListJson").append(')') }
@@ -44,7 +44,7 @@ public class MovieListJsonJsonAdapter(
     var overview: String? = null
     var poster_path: String? = null
     var release_date: String? = null
-    var genre: List<Int>? = null
+    var genre_ids: List<Int>? = null
     reader.beginObject()
     while (reader.hasNext()) {
       when (reader.selectName(options)) {
@@ -55,8 +55,8 @@ public class MovieListJsonJsonAdapter(
         2 -> poster_path = nullableStringAdapter.fromJson(reader)
         3 -> release_date = stringAdapter.fromJson(reader) ?:
             throw Util.unexpectedNull("release_date", "release_date", reader)
-        4 -> genre = listOfIntAdapter.fromJson(reader) ?: throw Util.unexpectedNull("genre",
-            "genre", reader)
+        4 -> genre_ids = listOfIntAdapter.fromJson(reader) ?: throw Util.unexpectedNull("genre_ids",
+            "genre_ids", reader)
         -1 -> {
           // Unknown name, skip it.
           reader.skipName()
@@ -71,7 +71,7 @@ public class MovieListJsonJsonAdapter(
         poster_path = poster_path,
         release_date = release_date ?: throw Util.missingProperty("release_date", "release_date",
             reader),
-        genre = genre ?: throw Util.missingProperty("genre", "genre", reader)
+        genre_ids = genre_ids ?: throw Util.missingProperty("genre_ids", "genre_ids", reader)
     )
   }
 
@@ -88,8 +88,8 @@ public class MovieListJsonJsonAdapter(
     nullableStringAdapter.toJson(writer, value_.poster_path)
     writer.name("release_date")
     stringAdapter.toJson(writer, value_.release_date)
-    writer.name("genre")
-    listOfIntAdapter.toJson(writer, value_.genre)
+    writer.name("genre_ids")
+    listOfIntAdapter.toJson(writer, value_.genre_ids)
     writer.endObject()
   }
 }
