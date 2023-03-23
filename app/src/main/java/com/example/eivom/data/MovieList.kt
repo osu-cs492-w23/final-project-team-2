@@ -1,5 +1,7 @@
 package com.example.eivom.data
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.JsonClass
 import com.squareup.moshi.ToJson
@@ -12,6 +14,14 @@ data class MovieList(
     val release_date: String,
     val genre_ids: List<Int>
 ): Serializable
+
+@JsonClass(generateAdapter = true)
+@Entity
+data class FavoriteMovies(
+    @PrimaryKey
+    val title: String,
+    val overview: String
+) : Serializable
 
 @JsonClass(generateAdapter = true)
 data class MovieListJson(

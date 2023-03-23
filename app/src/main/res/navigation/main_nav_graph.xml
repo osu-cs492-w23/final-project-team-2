@@ -23,5 +23,17 @@
             app:argType="com.example.eivom.data.MovieList"/>
     </fragment>
 
+    <fragment
+        android:id="@+id/favoriteMovie"
+        android:name="com.example.eivom.ui.FavoriteMoviesFragment"
+        android:label="Favorite Movies">
+        <argument
+            android:name="favorites"
+            app:argType="com.example.eivom.data.MovieList"/>
+        <action
+            android:id="@+id/navigate_to_movie_detail"
+            app:destination="@id/moviedetail"/>
+    </fragment>
+
 
 </navigation>
