@@ -1,5 +1,9 @@
 [
     {
+        "merged": "com.example.eivom.app-merged_res-48:/layout_movie_info.xml.flat",
+        "source": "com.example.eivom.app-main-50:/layout/movie_info.xml"
+    },
+    {
         "merged": "C:\\Users\\Alpha\\.gradle\\daemon\\7.5\\com.example.eivom.app-merged_res-48:\\mipmap-anydpi-v33_ic_launcher.xml.flat",
         "source": "C:\\Users\\Alpha\\.gradle\\daemon\\7.5\\com.example.eivom.app-main-50:\\mipmap-anydpi-v33\\ic_launcher.xml"
     },
@@ -8,16 +12,12 @@
         "source": "C:\\Users\\Alpha\\.gradle\\daemon\\7.5\\com.example.eivom.app-main-50:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Alpha\\.gradle\\daemon\\7.5\\com.example.eivom.app-merged_res-48:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Alpha\\.gradle\\daemon\\7.5\\com.example.eivom.app-main-50:\\mipmap-xhdpi\\ic_launcher_round.webp"
-    },
-    {
         "merged": "C:\\Users\\Alpha\\.gradle\\daemon\\7.5\\com.example.eivom.app-merged_res-48:\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\Alpha\\.gradle\\daemon\\7.5\\com.example.eivom.app-main-50:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.eivom.app-merged_res-48:/layout_movie_info_list_item.xml.flat",
-        "source": "com.example.eivom.app-main-50:/layout/movie_info_list_item.xml"
+        "merged": "C:\\Users\\Alpha\\.gradle\\daemon\\7.5\\com.example.eivom.app-merged_res-48:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Alpha\\.gradle\\daemon\\7.5\\com.example.eivom.app-main-50:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\Alpha\\.gradle\\daemon\\7.5\\com.example.eivom.app-merged_res-48:\\mipmap-xxxhdpi_ic_launcher.webp.flat",

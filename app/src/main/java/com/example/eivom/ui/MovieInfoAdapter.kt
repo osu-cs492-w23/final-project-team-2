@@ -1,5 +1,6 @@
 package com.example.eivom.ui
 
+import android.media.Image
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import com.bumptech.glide.Glide
 import com.example.eivom.R
 import com.example.eivom.data.MovieInfo
 import com.example.eivom.data.MovieList
+import org.w3c.dom.Text
 
 class MovieInfoAdapter(private val onClick: (MovieList) -> Unit): RecyclerView.Adapter<MovieInfoAdapter.MovieInfoViewHolder>(){
     var movieInfoList: List<MovieList> = listOf()
@@ -38,8 +40,9 @@ class MovieInfoAdapter(private val onClick: (MovieList) -> Unit): RecyclerView.A
 
     class MovieInfoViewHolder(view: View, val onClick: (MovieList) -> Unit): RecyclerView.ViewHolder(view){
 
-        private val posterTV: ImageView = itemView.findViewById(R.id.movie_poster)
         private val overview: TextView = itemView.findViewById(R.id.overview)
+        private val title: TextView = itemView.findViewById(R.id.title)
+        private val posterTV: ImageView = itemView.findViewById(R.id.movie_poster)
 
         private var currentMovieInfo: MovieList? = null
 
@@ -47,8 +50,10 @@ class MovieInfoAdapter(private val onClick: (MovieList) -> Unit): RecyclerView.A
             val ctx = itemView.context
 
             currentMovieInfo = movieList
-//            overview.text = movieList.overview
 
+//            overview.text = movieList.overview
+//            title.text = movieList.title
+//            posterTV.text = movieList.poster_path
 
             Glide.with(ctx)
                 .load(movieList.poster_path)
