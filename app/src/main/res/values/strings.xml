@@ -10,4 +10,7 @@
     <string name="label_category_trending">Trending</string>
     <string name="label_category_action">Action</string>
     <string name="label_category_comedy">Comedy</string>
+
+    <string name="movie_title">%1$s</string>
+    <string name="movie_description">%1$s</string>
 </resources>
