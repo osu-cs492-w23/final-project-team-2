@@ -6,13 +6,16 @@ import android.util.Log
 import android.view.View
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.ImageButton
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.eivom.R
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupWithNavController
 import com.example.eivom.data.MovieList
+import com.google.android.material.navigation.NavigationView
 
 
 const val MOVIEDATABASE_APPID = "9b548beeca2515183884381852406153"
@@ -27,21 +30,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        val imageButton = findViewById<ImageButton>(R.id.moviePoster1)
-//        imageButton.setOnClickListener {
-//            Log.d(TAG, "Movie poster clicked")
-//        }
-
-
         val navHostFragment = supportFragmentManager.findFragmentById(
             R.id.nav_host_fragment
         )as NavHostFragment
 
         val navController = navHostFragment.navController
+        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
 
-        appBarConfig = AppBarConfiguration(navController.graph)
-
+        appBarConfig = AppBarConfiguration(navController.graph, drawerLayout)
         setupActionBarWithNavController(navController, appBarConfig)
+
+        findViewById<NavigationView>(R.id.nav_view)?.setupWithNavController(navController)
     }
 
     private fun onMoviePosterClick(detail: MovieList) {
