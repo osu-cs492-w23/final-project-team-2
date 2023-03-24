@@ -1,5 +1,6 @@
 package com.example.eivom.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -72,6 +73,10 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
                 toggleMovieFavorite(item)
                 true
             }
+            R.id.action_share -> {
+                shareContent()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -83,5 +88,14 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
             }
             true -> favoriteViewModel.removeFavoriteMovie(args.moviedetail)
         }
+    }
+
+    private fun shareContent() {
+        val shareText = getString(R.string.share_text, args.moviedetail.title, args.moviedetail.poster_path)
+        val intent = Intent()
+        intent.action = Intent.ACTION_SEND
+        intent.type = "text/plain"
+        intent.putExtra(Intent.EXTRA_TEXT, shareText)
+        startActivity(Intent.createChooser(intent, null))
     }
 }

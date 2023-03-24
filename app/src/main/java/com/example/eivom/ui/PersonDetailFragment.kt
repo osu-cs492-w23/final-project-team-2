@@ -1,6 +1,10 @@
 package com.example.eivom.ui
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -28,4 +32,28 @@ class PersonDetailFragment: Fragment(R.layout.person_details_activity) {
         view.findViewById<TextView>(R.id.personPopularity).text = getString(R.string.person_popularity, args.persondetail.popularity)
 
     }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.activity_person_detail, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
+            R.id.action_share -> {
+                shareContent()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun shareContent() {
+        val shareText = getString(R.string.share_text, args.persondetail.name, args.persondetail.profile_path)
+        val intent = Intent()
+        intent.action = Intent.ACTION_SEND
+        intent.type = "text/plain"
+        intent.putExtra(Intent.EXTRA_TEXT, shareText)
+        startActivity(Intent.createChooser(intent, null))
+    }
+
 }
