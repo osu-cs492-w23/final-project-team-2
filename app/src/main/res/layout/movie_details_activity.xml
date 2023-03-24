@@ -71,12 +71,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <VideoView
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
         android:id="@+id/movieTrailer"
         android:layout_width="346dp"
-        android:layout_height="257dp"
+        android:layout_height="215dp"
         android:layout_marginTop="16dp"
+        app:autoPlay="true"
+        app:enableAutomaticInitialization="false"
         app:layout_constraintStart_toStartOf="@+id/tvBackdropTitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvBackdropTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tvBackdropTitle"
+        app:videoId="NsUWXo8M7UA" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,7 +20,7 @@
         android:layout_height="34dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
-        android:text="personTitle"
+        android:text="personName"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
