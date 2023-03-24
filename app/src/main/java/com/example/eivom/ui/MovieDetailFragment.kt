@@ -21,8 +21,11 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.options.IFram
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import retrofit2.Retrofit
 
+import com.example.eivom.data.VideoList
+
 class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
     private val args: MovieDetailFragmentArgs by navArgs()
+
     private val favoriteViewModel: FavoriteMoviesViewModel by viewModels()
     private var isLiked = false
 
@@ -55,7 +58,7 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
             }
         }, IFramePlayerOptions.default)
 
-//        videoInfoViewModel.loadVideoInfo(args.moviedetail.id, "1f89bc62d244a63f91c60d7a7381ebd3")
+        videoInfoViewModel.loadVideoInfo(args.moviedetail.id, "1f89bc62d244a63f91c60d7a7381ebd3")
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -106,6 +109,7 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
             true -> favoriteViewModel.removeFavoriteMovie(args.moviedetail)
         }
     }
+
     private fun shareContent() {
         val shareText = getString(R.string.share_text, args.moviedetail.title, args.moviedetail.poster_path)
         val intent = Intent()
