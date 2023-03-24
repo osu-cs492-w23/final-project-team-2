@@ -20,7 +20,7 @@
         android:layout_height="34dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
-        android:text="movieTitle"
+        android:text="tvTitle"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +41,7 @@
         android:layout_width="149dp"
         android:layout_height="34dp"
         android:layout_marginTop="44dp"
-        android:text="trailerTitle"
+        android:text="Quick Look"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/personPoster"
         app:layout_constraintTop_toBottomOf="@+id/personPoster" />
@@ -62,17 +62,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
         android:layout_marginEnd="16dp"
-        android:text="Release Date"
+        android:text="First Air Date"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <VideoView
-        android:id="@+id/movieTrailer"
-        android:layout_width="346dp"
-        android:layout_height="257dp"
-        android:layout_marginTop="16dp"
+    <ImageView
+        android:id="@+id/tvBackdropImage"
+        android:layout_width="352dp"
+        android:layout_height="207dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintStart_toStartOf="@+id/tvBackdropTitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvBackdropTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tvBackdropTitle"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
