@@ -12,6 +12,9 @@
         <action
             android:id="@+id/navigate_to_movie_detail"
             app:destination="@id/moviedetail"/>
+        <action
+            android:id="@+id/navigate_to_tvshow_detail"
+            app:destination="@id/tvshowdetail"/>
     </fragment>
 
     <fragment
@@ -21,6 +24,15 @@
         <argument
             android:name="moviedetail"
             app:argType="com.example.eivom.data.MovieList"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/tvshowdetail"
+        android:name="com.example.eivom.ui.TvShowDetailFragment"
+        android:label="@string/label_tvshow_detail">
+        <argument
+            android:name="tvshowdetail"
+            app:argType="com.example.eivom.data.TvShowList"/>
     </fragment>
 
     <fragment

@@ -1,34 +1,44 @@
 package com.example.eivom.data
 
+import android.icu.util.UniversalTimeScale.toBigDecimal
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.JsonClass
 import com.squareup.moshi.ToJson
 
 data class TvShowList(
     val adult : Boolean,
+    val backdrop_path: String,
     val name : String,
     val original_language : String,
     val overview : String,
-    val poster_path: String?
+    val poster_path: String?,
+    val first_air_date: String,
+    val vote_average: String
 ): java.io.Serializable
 
 @JsonClass(generateAdapter = true)
 data class TvShowListJson(
     val adult : Boolean,
+    val backdrop_path: String,
     val name : String,
     val original_language : String,
     val overview : String,
-    val poster_path: String?
+    val poster_path: String?,
+    val first_air_date: String,
+    val vote_average: Double
 )
 
 class TvShowListJsonAdapter{
     @FromJson
     fun tvShowInfoFromJson(list: TvShowListJson) = TvShowList(
         adult = list.adult,
+        backdrop_path = "https://image.tmdb.org/t/p/w500${list.backdrop_path}",
         name = list.name,
         original_language = list.original_language,
         overview = list.overview,
-        poster_path = "https://image.tmdb.org/t/p/w500${list.poster_path}"
+        poster_path = "https://image.tmdb.org/t/p/w500${list.poster_path}",
+        first_air_date = "Release Date: ${list.first_air_date}",
+        vote_average = "Rating: ${list.vote_average.toBigDecimal().toPlainString()}"
     )
 
     @ToJson

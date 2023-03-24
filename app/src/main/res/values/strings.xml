@@ -8,11 +8,19 @@
 
     //Fragment Labels
     <string name="label_movie_info">Eivom</string>
+    <string name="label_category_trending">Trending Movies</string>
     <string name="label_movie_detail">Movie Detail</string>
-    <string name="label_category_trending">Trending</string>
-    <string name="label_category_tvshow">TV Shows</string>
+
+    <string name="label_category_tvshow">Trending TV Shows</string>
+    <string name="label_tvshow_detail">TvShow Detail</string>
+
     <string name="label_category_comedy">Comedy</string>
 
     <string name="movie_title">%1$s</string>
     <string name="movie_description">%1$s</string>
+
+    <string name="tv_name">%1$s</string>
+    <string name="tv_overview">%1$s</string>
+    <string name="tv_first_air_date">%1$s</string>
+    <string name="tv_rating">%1$s</string>
 </resources>
