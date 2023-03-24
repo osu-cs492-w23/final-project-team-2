@@ -52,6 +52,7 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
                 youTubePlayer.cueVideo("NsUWXo8M7UA", 0f)
             }
         }, IFramePlayerOptions.default)
+
         videoInfoViewModel.loadVideoInfo(args.moviedetail.id, "1f89bc62d244a63f91c60d7a7381ebd3")
     }
 
