@@ -19,12 +19,10 @@ import com.google.android.material.progressindicator.CircularProgressIndicator
 class MovieInfoFragment : Fragment(R.layout.movie_info) {
     private val TAG = "MovieInfoFragment"
 
-    private val args: MovieDetailFragmentArgs by navArgs()
-
     //NEED TO CHANGE THE BELOW SNIPPET
     //Videos
 //    private val videoInfoViewModel : VideoInfoViewModel by viewModels()
-//    private val videoInfoAdapter = VideoInfoAdapter(::onVideoInfoItemClick)
+//    private val videoInfoAdapter = VideoInfoAdapter(::onVideoItemClick)
 
     //Movies
     private val movieInfoViewModel : MovieInfoViewModel by viewModels()
@@ -71,7 +69,7 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
         personInfoRV.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         personInfoRV.setHasFixedSize(true)
         personInfoRV.adapter = personInfoAdapter
-        
+
         //NEED TO CHANGE THE LOCATION OF THE BELOW SNIPPET
 //        videoInfoRV = view.findViewById(R.id.rv_movie_info2)
 //        videoInfoRV.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
@@ -199,7 +197,6 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
         movieInfoViewModel.loadMovieInfo("1f89bc62d244a63f91c60d7a7381ebd3")
         tvShowInfoViewModel.loadTvShowInfo("1f89bc62d244a63f91c60d7a7381ebd3")
         personInfoViewModel.loadPersonInfo("1f89bc62d244a63f91c60d7a7381ebd3")
-//        videoInfoViewModel.loadVideoInfo(157336, "1f89bc62d244a63f91c60d7a7381ebd3")
     }
 
     private fun onInfoItemClick(list: MovieList) {
@@ -218,6 +215,9 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
     private fun onPersonItemClick(list: PersonList){
         val directions = MovieInfoFragmentDirections.navigateToPersonDetail(list)
         findNavController().navigate(directions)
+    }
+
+    private fun onVideoItemClick(list: VideoList){
 
     }
 }

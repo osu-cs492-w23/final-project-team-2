@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.eivom.api.PersonTMDBService
 import com.example.eivom.data.PersonInfo
 import com.example.eivom.data.PersonInfoRepository
+import com.example.eivom.data.PersonList
 import kotlinx.coroutines.launch
 
 class PersonInfoViewModel: ViewModel() {
