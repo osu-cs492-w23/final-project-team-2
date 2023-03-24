@@ -9,6 +9,7 @@ data class PersonList(
     val known_for: String?,
     val known_for2: String?,
     val known_for_department: String,
+    val gender: Int,
     val name: String,
     val popularity: String,
     val profile_path: String,
@@ -18,6 +19,7 @@ data class PersonList(
 data class PersonListJson(
     val known_for: List<KnownForListJson>,
     val known_for_department: String,
+    val gender: Int,
     val name: String,
     val popularity: String,
     val profile_path: String,
@@ -33,9 +35,10 @@ class PersonListJsonAdapter{
     fun personInfoFromJson(list: PersonListJson) = PersonList(
         known_for = "https://image.tmdb.org/t/p/w500${list.known_for[0].poster_path}",
         known_for2 = "https://image.tmdb.org/t/p/w500${list.known_for[1].poster_path}",
-        known_for_department = list.known_for_department,
+        known_for_department = "Known For: ${list.known_for_department}",
+        gender = list.gender,
         name = list.name,
-        popularity = "Popularity: ${list.popularity.toBigDecimal().toPlainString()} %",
+        popularity = "Popularity: ${list.popularity.toBigDecimal().toPlainString()}",
         profile_path = "https://image.tmdb.org/t/p/w500${list.profile_path}"
     )
 
