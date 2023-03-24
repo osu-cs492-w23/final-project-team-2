@@ -23,6 +23,7 @@
         android:text="tvTitle"
         android:textColor="@color/black"
         android:textSize="20dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,6 +34,7 @@
         android:layout_marginTop="8dp"
         android:text="Description"
         android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
         app:layout_constraintStart_toStartOf="@id/tvShowRating"
         app:layout_constraintTop_toBottomOf="@+id/tvShowRating" />
 
@@ -43,6 +45,7 @@
         android:layout_marginTop="44dp"
         android:text="Quick Look"
         android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         app:layout_constraintStart_toStartOf="@+id/tvshowPoster"
         app:layout_constraintTop_toBottomOf="@+id/tvshowPoster" />
 
@@ -53,6 +56,7 @@
         android:layout_marginTop="8dp"
         android:text="Rating"
         android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
         app:layout_constraintStart_toStartOf="@+id/tvFirstAirDate"
         app:layout_constraintTop_toBottomOf="@+id/tvFirstAirDate" />
 
@@ -64,6 +68,7 @@
         android:layout_marginEnd="16dp"
         android:text="First Air Date"
         android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -71,7 +76,7 @@
         android:id="@+id/tvBackdropImage"
         android:layout_width="352dp"
         android:layout_height="207dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="@+id/tvBackdropTitle"
         app:layout_constraintTop_toBottomOf="@+id/tvBackdropTitle"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />

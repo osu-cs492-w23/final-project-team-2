@@ -20,6 +20,8 @@
 
     <string name="movie_title">%1$s</string>
     <string name="movie_description">%1$s</string>
+    <string name="movie_release_date">%1$s</string>
+    <string name="movie_rating">%1$s</string>
 
     <string name="tv_name">%1$s</string>
     <string name="tv_overview">%1$s</string>

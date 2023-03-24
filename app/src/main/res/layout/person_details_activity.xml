@@ -23,6 +23,7 @@
         android:text="personTitle"
         android:textColor="@color/black"
         android:textSize="20dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,6 +34,7 @@
         android:layout_marginTop="36dp"
         android:text="Appears In:"
         android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         app:layout_constraintStart_toStartOf="@+id/personName"
         app:layout_constraintTop_toBottomOf="@+id/personPoster" />
 
@@ -43,6 +45,7 @@
         android:layout_marginTop="84dp"
         android:layout_marginEnd="16dp"
         android:text="Rating"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
