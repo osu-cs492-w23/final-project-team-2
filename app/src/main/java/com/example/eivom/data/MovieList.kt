@@ -9,6 +9,8 @@ import java.io.Serializable
 
 @Entity
 data class MovieList(
+
+    val id: Int,
     @PrimaryKey
     val title: String,
     val overview: String,
@@ -20,6 +22,7 @@ data class MovieList(
 
 @JsonClass(generateAdapter = true)
 data class MovieListJson(
+    val id: Int,
     val title: String,
     val overview: String,
     val poster_path: String?,
@@ -30,6 +33,7 @@ data class MovieListJson(
 class EivomListJsonAdapter{
     @FromJson
     fun movieInfoFromJson(list: MovieListJson) = MovieList(
+        id = list.id,
         title = list.title,
         overview = list.overview,
         poster_path = "https://image.tmdb.org/t/p/w500${list.poster_path}",

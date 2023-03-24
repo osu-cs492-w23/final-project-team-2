@@ -7,15 +7,24 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eivom.R
+
 import com.example.eivom.data.*
 
 import com.google.android.material.progressindicator.CircularProgressIndicator
 
 class MovieInfoFragment : Fragment(R.layout.movie_info) {
     private val TAG = "MovieInfoFragment"
+
+    private val args: MovieDetailFragmentArgs by navArgs()
+
+    //NEED TO CHANGE THE BELOW SNIPPET
+    //Videos
+    private val videoInfoViewModel : VideoInfoViewModel by viewModels()
+    private val videoInfoAdapter = VideoInfoAdapter(::onVideoInfoItemClick)
 
     //Movies
     private val movieInfoViewModel : MovieInfoViewModel by viewModels()
@@ -32,6 +41,9 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
     private lateinit var movieInfoRV : RecyclerView
     private lateinit var tvShowInfoRV : RecyclerView
     private lateinit var personInfoRV : RecyclerView
+    
+    //NEED TO CHANGE THE LOCATION OF THE BELOW SNIPPET
+    private lateinit var videoInfoRV : RecyclerView
 
     private lateinit var loadingErrorTV : TextView
     private lateinit var loadingIndicator : CircularProgressIndicator
@@ -59,6 +71,12 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
         personInfoRV.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         personInfoRV.setHasFixedSize(true)
         personInfoRV.adapter = personInfoAdapter
+        
+        //NEED TO CHANGE THE LOCATION OF THE BELOW SNIPPET
+        videoInfoRV = view.findViewById(R.id.rv_movie_info2)
+        videoInfoRV.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        videoInfoRV.setHasFixedSize(true)
+        videoInfoRV.adapter = videoInfoAdapter
 
         //MOVIEINFOVIEWMODEL
         movieInfoViewModel.info.observe(viewLifecycleOwner){info ->
@@ -143,6 +161,37 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
                 loadingIndicator.visibility = View.INVISIBLE
             }
         }
+
+        //NEED TO CHANGE THE LOCATION OF THE BELOW SNIPPET
+        // *****    videoInfoViewModel      *****   //
+        videoInfoViewModel.info.observe(viewLifecycleOwner){info ->
+            if(info != null){
+                videoInfoAdapter.updateInfo(info)
+
+                videoInfoRV.visibility = View.VISIBLE
+                videoInfoRV.scrollToPosition(0)
+            }
+        }
+
+        videoInfoViewModel.error.observe(viewLifecycleOwner){error ->
+            if(error != null){
+                loadingErrorTV.text = getString(R.string.loading_error, error.message)
+                loadingErrorTV.visibility = View.VISIBLE
+                Log.e(TAG, "Error fetching VideoDatabase: ${error.message}")
+            }
+        }
+
+        videoInfoViewModel.loading.observe(viewLifecycleOwner){loading ->
+            if(loading){
+                loadingIndicator.visibility = View.VISIBLE
+                loadingErrorTV.visibility = View.INVISIBLE
+                videoInfoRV.visibility = View.INVISIBLE
+            }
+            else{
+                loadingIndicator.visibility = View.INVISIBLE
+            }
+        }
+
     }
     override fun onResume() {
         super.onResume()
@@ -150,11 +199,15 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
         movieInfoViewModel.loadMovieInfo("1f89bc62d244a63f91c60d7a7381ebd3")
         tvShowInfoViewModel.loadTvShowInfo("1f89bc62d244a63f91c60d7a7381ebd3")
         personInfoViewModel.loadPersonInfo("1f89bc62d244a63f91c60d7a7381ebd3")
+        videoInfoViewModel.loadVideoInfo(157336, "1f89bc62d244a63f91c60d7a7381ebd3")
     }
 
     private fun onInfoItemClick(list: MovieList) {
         val directions = MovieInfoFragmentDirections.navigateToMovieDetail(list)
         findNavController().navigate(directions)
+    }
+
+    private fun onVideoInfoItemClick(list: VideoList){
     }
 
     private fun onTvShowItemClick(list: TvShowList){
@@ -165,5 +218,6 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
     private fun onPersonItemClick(list: PersonList){
         val directions = MovieInfoFragmentDirections.navigateToPersonDetail(list)
         findNavController().navigate(directions)
+
     }
 }
