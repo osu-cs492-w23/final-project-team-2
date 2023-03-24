@@ -11,10 +11,11 @@
     <string name="label_category_trending">Trending Movies</string>
     <string name="label_movie_detail">Movie Detail</string>
 
+    <string name="label_category_trending">Trending Movies</string>
     <string name="label_category_tvshow">Trending TV Shows</string>
-    <string name="label_tvshow_detail">TvShow Detail</string>
+    <string name="label_category_comedy">Trending People</string>
 
-    <string name="label_category_comedy">Comedy</string>
+    <string name="label_tvshow_detail">TvShow Detail</string>
 
     <string name="movie_title">%1$s</string>
     <string name="movie_description">%1$s</string>
