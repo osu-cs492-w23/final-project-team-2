@@ -25,6 +25,8 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
     private var isLiked = false
 
     private var key = "NsUWXo8M7UA"
+    private var type = ""
+    private var official = false
 
     private val videoInfoViewModel : VideoInfoViewModel by viewModels()
 
@@ -57,7 +59,12 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
         }, IFramePlayerOptions.default)
 
         videoInfoViewModel.info.observe(viewLifecycleOwner) { info ->
-            key = info?.results?.get(0)?.key ?: ""
+            if (info != null) {
+                for (result in info.results) {
+                    if (result.type == "Trailer" && result.official)
+                        key = result.key
+                }
+            }
         }
 
         videoInfoViewModel.loadVideoInfo(args.moviedetail.id, "1f89bc62d244a63f91c60d7a7381ebd3")
