@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eivom.R
-import com.example.eivom.data.MovieList
+import com.example.eivom.data.*
 
 import com.google.android.material.progressindicator.CircularProgressIndicator
 
@@ -158,10 +158,8 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
     }
 
     private fun onTvShowItemClick(list: TvShowList){
-
     }
 
     private fun onPersonItemClick(list: PersonList){
-
     }
 }
