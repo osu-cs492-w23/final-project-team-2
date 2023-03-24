@@ -10,17 +10,17 @@
         android:layout_width="169dp"
         android:layout_height="231dp"
         android:layout_marginTop="12dp"
-        app:layout_constraintStart_toStartOf="@+id/personTitle"
-        app:layout_constraintTop_toBottomOf="@+id/personTitle"
+        app:layout_constraintStart_toStartOf="@+id/personName"
+        app:layout_constraintTop_toBottomOf="@+id/personName"
         app:srcCompat="@drawable/sample_movie_poster" />
 
     <TextView
-        android:id="@+id/personTitle"
+        android:id="@+id/personName"
         android:layout_width="wrap_content"
         android:layout_height="34dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
-        android:text="movieTitle"
+        android:text="personTitle"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,49 +30,29 @@
         android:id="@+id/personAppearsIn"
         android:layout_width="185dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Description"
+        android:layout_marginTop="36dp"
+        android:text="Appears In:"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@id/personRating"
-        app:layout_constraintTop_toBottomOf="@+id/personRating" />
-
-    <TextView
-        android:id="@+id/tvBackdropTitle"
-        android:layout_width="149dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="44dp"
-        android:text="trailerTitle"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@+id/personPoster"
+        app:layout_constraintStart_toStartOf="@+id/personName"
         app:layout_constraintTop_toBottomOf="@+id/personPoster" />
 
     <TextView
-        android:id="@+id/personRating"
-        android:layout_width="185dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Rating"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@+id/personKnownFor"
-        app:layout_constraintTop_toBottomOf="@+id/personKnownFor" />
-
-    <TextView
-        android:id="@+id/personKnownFor"
+        android:id="@+id/personPopularity"
         android:layout_width="185dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
         android:layout_marginEnd="16dp"
-        android:text="Release Date"
+        android:text="Rating"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <VideoView
-        android:id="@+id/movieTrailer"
-        android:layout_width="346dp"
-        android:layout_height="257dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/personAppearsInList"
+        android:layout_width="343dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@+id/tvBackdropTitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvBackdropTitle" />
+        app:layout_constraintStart_toStartOf="@+id/personPoster"
+        app:layout_constraintTop_toBottomOf="@+id/personAppearsIn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

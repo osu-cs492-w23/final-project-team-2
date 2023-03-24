@@ -1,7 +1,7 @@
 package com.example.eivom.api
 
-import com.example.eivom.data.EivomListJsonAdapter
-import com.example.eivom.data.MovieInfo
+import com.example.eivom.data.TvShowInfo
+import com.example.eivom.data.TvShowListJsonAdapter
 import com.squareup.moshi.Moshi
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -9,25 +9,24 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-
-interface EivomService {
-    @GET("trending/movie/week")
-    suspend fun loadMovieList(
+interface TvShowTMDBService {
+    @GET("trending/tv/week")
+    suspend fun loadTvShowList(
         @Query("api_key") apiKey: String
-    ) : Response<MovieInfo>
+    ) : Response<TvShowInfo>
 
-    companion object {
+    companion object{
         private const val BASE_URL = "https://api.themoviedb.org/3/"
 
-        fun create() : EivomService {
+        fun create(): TvShowTMDBService{
             val moshi = Moshi.Builder()
-                .add(EivomListJsonAdapter())
+                .add(TvShowListJsonAdapter())
                 .build()
             return Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(MoshiConverterFactory.create(moshi))
                 .build()
-                .create(EivomService::class.java)
+                .create(TvShowTMDBService::class.java)
         }
     }
 }

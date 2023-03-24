@@ -1,11 +1,9 @@
 package com.example.eivom.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.AdapterView.OnItemClickListener
-import android.widget.ImageButton
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -46,7 +44,6 @@ class MainActivity : AppCompatActivity() {
     private fun onMoviePosterClick(detail: MovieList) {
         Log.d(TAG, "Movie poster clicked")
     }
-
     override fun onSupportNavigateUp(): Boolean{
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfig) || super.onSupportNavigateUp()

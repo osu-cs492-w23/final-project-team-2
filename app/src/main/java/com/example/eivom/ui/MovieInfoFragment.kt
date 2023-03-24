@@ -11,8 +11,9 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eivom.R
-import com.example.eivom.data.MovieList
-import com.example.eivom.data.VideoList
+
+import com.example.eivom.data.*
+
 import com.google.android.material.progressindicator.CircularProgressIndicator
 
 class MovieInfoFragment : Fragment(R.layout.movie_info) {
@@ -20,17 +21,30 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
 
     private val args: MovieDetailFragmentArgs by navArgs()
 
-    private val movieInfoViewModel : MovieInfoViewModel by viewModels()
-    private val infoAdapter = MovieInfoAdapter(::onInfoItemClick)
-
-
-//  video info API call
+    //NEED TO CHANGE THE BELOW SNIPPET
+    //Videos
     private val videoInfoViewModel : VideoInfoViewModel by viewModels()
     private val videoInfoAdapter = VideoInfoAdapter(::onVideoInfoItemClick)
 
+    //Movies
+    private val movieInfoViewModel : MovieInfoViewModel by viewModels()
+    private val infoAdapter = MovieInfoAdapter(::onInfoItemClick)
+
+    //TvShows
+    private val tvShowInfoViewModel : TvShowViewModel by viewModels()
+    private val tvShowInfoAdapter = TvShowInfoAdapter(::onTvShowItemClick)
+
+    //Person
+    private val personInfoViewModel : PersonInfoViewModel by viewModels()
+    private val personInfoAdapter = PersonInfoAdapter(::onPersonItemClick)
+
     private lateinit var movieInfoRV : RecyclerView
-    private lateinit var movieInfoRV2 : RecyclerView
-    private lateinit var movieInfoRV3 : RecyclerView
+    private lateinit var tvShowInfoRV : RecyclerView
+    private lateinit var personInfoRV : RecyclerView
+    
+    //NEED TO CHANGE THE LOCATION OF THE BELOW SNIPPET
+    private lateinit var videoInfoRV : RecyclerView
+
     private lateinit var loadingErrorTV : TextView
     private lateinit var loadingIndicator : CircularProgressIndicator
 
@@ -48,26 +62,28 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
         movieInfoRV.setHasFixedSize(true)
         movieInfoRV.adapter = infoAdapter
 
-        movieInfoRV2 = view.findViewById(R.id.rv_movie_info2)
-        movieInfoRV2.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        movieInfoRV2.setHasFixedSize(true)
-        movieInfoRV2.adapter = videoInfoAdapter
+        tvShowInfoRV = view.findViewById(R.id.rv_movie_info2)
+        tvShowInfoRV.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        tvShowInfoRV.setHasFixedSize(true)
+        tvShowInfoRV.adapter = tvShowInfoAdapter
 
-        movieInfoRV3 = view.findViewById(R.id.rv_movie_info3)
-        movieInfoRV3.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        movieInfoRV3.setHasFixedSize(true)
-        movieInfoRV3.adapter = infoAdapter
+        personInfoRV = view.findViewById(R.id.rv_movie_info3)
+        personInfoRV.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        personInfoRV.setHasFixedSize(true)
+        personInfoRV.adapter = personInfoAdapter
+        
+        //NEED TO CHANGE THE LOCATION OF THE BELOW SNIPPET
+        videoInfoRV = view.findViewById(R.id.rv_movie_info2)
+        videoInfoRV.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        videoInfoRV.setHasFixedSize(true)
+        videoInfoRV.adapter = videoInfoAdapter
 
-        //LandingPageViewModel.observe SECTION
+        //MOVIEINFOVIEWMODEL
         movieInfoViewModel.info.observe(viewLifecycleOwner){info ->
             if(info != null){
-                infoAdapter.updateInfo(info)
+                infoAdapter.updateInfo(info.result)
                 movieInfoRV.visibility = View.VISIBLE
                 movieInfoRV.scrollToPosition(0)
-
-
-                movieInfoRV3.visibility = View.VISIBLE
-                movieInfoRV3.scrollToPosition(0)
             }
         }
 
@@ -84,20 +100,76 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
                 loadingIndicator.visibility = View.VISIBLE
                 loadingErrorTV.visibility = View.INVISIBLE
                 movieInfoRV.visibility = View.INVISIBLE
-                movieInfoRV3.visibility = View.INVISIBLE
             }
             else{
                 loadingIndicator.visibility = View.INVISIBLE
             }
         }
 
-// *****    videoInfoViewModel      *****   //
+        //TVSHOWINFOVIEWMODEL
+        tvShowInfoViewModel.info.observe(viewLifecycleOwner){info ->
+            if(info != null){
+                tvShowInfoAdapter.updateInfo(info)
+                tvShowInfoRV.visibility = View.VISIBLE
+                tvShowInfoRV.scrollToPosition(0)
+            }
+        }
+
+        tvShowInfoViewModel.error.observe(viewLifecycleOwner){error ->
+            if(error != null){
+                loadingErrorTV.text = getString(R.string.loading_error_tvshow, error.message)
+                loadingErrorTV.visibility = View.VISIBLE
+                Log.e(TAG, "Error fetching TvShowDatabase: ${error.message}")
+            }
+        }
+
+        tvShowInfoViewModel.loading.observe(viewLifecycleOwner){loading ->
+            if(loading){
+                loadingIndicator.visibility = View.VISIBLE
+                loadingErrorTV.visibility = View.INVISIBLE
+                tvShowInfoRV.visibility = View.INVISIBLE
+            }
+            else{
+                loadingIndicator.visibility = View.INVISIBLE
+            }
+        }
+
+        //PERSONINFOVIEWMODEL
+        personInfoViewModel.info.observe(viewLifecycleOwner){info ->
+            if(info != null){
+                personInfoAdapter.updateInfo(info)
+                personInfoRV.visibility = View.VISIBLE
+                personInfoRV.scrollToPosition(0)
+            }
+        }
+
+        personInfoViewModel.error.observe(viewLifecycleOwner){error ->
+            if(error != null){
+                loadingErrorTV.text = getString(R.string.loading_error_person, error.message)
+                loadingErrorTV.visibility = View.VISIBLE
+                Log.e(TAG, "Error fetching PersonDatabase: ${error.message}")
+            }
+        }
+
+        personInfoViewModel.loading.observe(viewLifecycleOwner){loading ->
+            if(loading){
+                loadingIndicator.visibility = View.VISIBLE
+                loadingErrorTV.visibility = View.INVISIBLE
+                personInfoRV.visibility = View.INVISIBLE
+            }
+            else{
+                loadingIndicator.visibility = View.INVISIBLE
+            }
+        }
+
+        //NEED TO CHANGE THE LOCATION OF THE BELOW SNIPPET
+        // *****    videoInfoViewModel      *****   //
         videoInfoViewModel.info.observe(viewLifecycleOwner){info ->
             if(info != null){
                 videoInfoAdapter.updateInfo(info)
 
-                movieInfoRV2.visibility = View.VISIBLE
-                movieInfoRV2.scrollToPosition(0)
+                videoInfoRV.visibility = View.VISIBLE
+                videoInfoRV.scrollToPosition(0)
             }
         }
 
@@ -113,7 +185,7 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
             if(loading){
                 loadingIndicator.visibility = View.VISIBLE
                 loadingErrorTV.visibility = View.INVISIBLE
-                movieInfoRV2.visibility = View.INVISIBLE
+                videoInfoRV.visibility = View.INVISIBLE
             }
             else{
                 loadingIndicator.visibility = View.INVISIBLE
@@ -125,6 +197,8 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
         super.onResume()
 
         movieInfoViewModel.loadMovieInfo("1f89bc62d244a63f91c60d7a7381ebd3")
+        tvShowInfoViewModel.loadTvShowInfo("1f89bc62d244a63f91c60d7a7381ebd3")
+        personInfoViewModel.loadPersonInfo("1f89bc62d244a63f91c60d7a7381ebd3")
         videoInfoViewModel.loadVideoInfo(157336, "1f89bc62d244a63f91c60d7a7381ebd3")
     }
 
@@ -134,6 +208,16 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
     }
 
     private fun onVideoInfoItemClick(list: VideoList){
+    }
+
+    private fun onTvShowItemClick(list: TvShowList){
+        val directions = MovieInfoFragmentDirections.navigateToTvshowDetail(list)
+        findNavController().navigate(directions)
+    }
+
+    private fun onPersonItemClick(list: PersonList){
+        val directions = MovieInfoFragmentDirections.navigateToPersonDetail(list)
+        findNavController().navigate(directions)
 
     }
 }
