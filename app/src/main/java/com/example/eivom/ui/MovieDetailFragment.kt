@@ -24,7 +24,10 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
     private val favoriteViewModel: FavoriteMoviesViewModel by viewModels()
     private var isLiked = false
 
+    private var key = "NsUWXo8M7UA"
+
     private val videoInfoViewModel : VideoInfoViewModel by viewModels()
+
     override fun onViewCreated(
         view: View,
         savedInstanceState: Bundle?
@@ -49,9 +52,13 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
 
         testTrailer.initialize(object : AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
-                youTubePlayer.cueVideo("NsUWXo8M7UA", 0f)
+                youTubePlayer.cueVideo(key, 0f)
             }
         }, IFramePlayerOptions.default)
+
+        videoInfoViewModel.info.observe(viewLifecycleOwner) { info ->
+            key = info?.results?.get(0)?.key ?: ""
+        }
 
         videoInfoViewModel.loadVideoInfo(args.moviedetail.id, "1f89bc62d244a63f91c60d7a7381ebd3")
     }
