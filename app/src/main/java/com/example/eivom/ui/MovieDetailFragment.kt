@@ -12,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.eivom.R
+import com.google.android.material.button.MaterialButton
 
 class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
     private val args: MovieDetailFragmentArgs by navArgs()
@@ -43,7 +44,6 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
         favoriteViewModel.getMovieByName(args.moviedetail.title).observe(viewLifecycleOwner) { movie ->
             when (movie) {
                 null -> {
-                    favoriteViewModel.removeFavoriteMovie(args.moviedetail)
                     isLiked = false
                     button.isChecked = false
                     button.icon = AppCompatResources.getDrawable(
@@ -52,7 +52,6 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
                     )
                 }
                 else -> {
-                    favoriteViewModel.addFavoriteMovie(args.moviedetail)
                     isLiked = true
                     button.isChecked = true
                     button.icon = AppCompatResources.getDrawable(

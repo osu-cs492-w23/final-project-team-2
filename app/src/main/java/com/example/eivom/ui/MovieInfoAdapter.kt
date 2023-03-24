@@ -19,7 +19,6 @@ class MovieInfoAdapter(private val onClick: (MovieList) -> Unit): RecyclerView.A
 
     fun updateInfo(info: List<MovieList>?) {
         movieInfoList = info ?: listOf()
-        Log.d("MovieInfoAdapter", "Data: $movieInfoList")
         notifyDataSetChanged()
     }
 
@@ -66,7 +65,6 @@ class MovieInfoAdapter(private val onClick: (MovieList) -> Unit): RecyclerView.A
             Glide.with(ctx)
                 .load(movieList.poster_path)
                 .into(posterTV)
-
         }
     }
 }
