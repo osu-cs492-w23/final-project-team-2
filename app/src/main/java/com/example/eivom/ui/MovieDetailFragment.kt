@@ -27,13 +27,13 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
 
         setHasOptionsMenu(true)
 
-        view.findViewById<TextView>(R.id.movieTitle).text = getString(R.string.movie_title, args.moviedetail.title)
+        view.findViewById<TextView>(R.id.personTitle).text = getString(R.string.movie_title, args.moviedetail.title)
 
         Glide.with(this)
             .load(args.moviedetail.poster_path)
-            .into(view.findViewById(R.id.moviePoster))
+            .into(view.findViewById(R.id.personPoster))
 
-        view.findViewById<TextView>(R.id.movieDescription).text = getString(R.string.movie_description, args.moviedetail.overview)
+        view.findViewById<TextView>(R.id.personKnownForList).text = getString(R.string.movie_description, args.moviedetail.overview)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
