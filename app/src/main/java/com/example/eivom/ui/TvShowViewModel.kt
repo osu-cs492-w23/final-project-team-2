@@ -7,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.eivom.api.TvShowTMDBService
 import com.example.eivom.data.TvShowInfo
 import com.example.eivom.data.TvShowInfoRepository
-import com.example.eivom.data.TvShowList
 import kotlinx.coroutines.launch
 
 class TvShowViewModel : ViewModel() {

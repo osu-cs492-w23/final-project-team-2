@@ -3,6 +3,7 @@ package com.example.eivom.ui
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -18,8 +19,8 @@ class TvShowDetailFragment: Fragment(R.layout.tv_details_activity) {
 
     private val args: TvShowDetailFragmentArgs by navArgs()
 
-//    private val favoriteViewModel: FavoriteMoviesViewModel by viewModels()
-//    private var isLiked = false
+    private val favoriteViewModel: FavoriteTvShowViewModel by viewModels()
+    private var isLiked = false
 
     override fun onViewCreated(
         view: View,
@@ -46,31 +47,50 @@ class TvShowDetailFragment: Fragment(R.layout.tv_details_activity) {
             .into(view.findViewById(R.id.tvBackdropImage))
     }
 
-//    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-//        inflater.inflate(R.menu.activity_movie_detail, menu)
-//
-//        val button = menu.findItem(R.id.action_favorite)
-//        favoriteViewModel.getMovieByName(args.tvshowdetail.name).observe(viewLifecycleOwner) { movie ->
-//            when (movie) {
-//                null -> {
-//                    favoriteViewModel.removeFavoriteMovie(args.tvshowdetail)
-//                    isLiked = false
-//                    button.isChecked = false
-//                    button.icon = AppCompatResources.getDrawable(
-//                        requireContext(),
-//                        R.drawable.ic_not_favorite_36
-//                    )
-//                }
-//                else -> {
-//                    favoriteViewModel.addFavoriteMovie(args.tvshowdetail)
-//                    isLiked = true
-//                    button.isChecked = true
-//                    button.icon = AppCompatResources.getDrawable(
-//                        requireContext(),
-//                        R.drawable.ic_favorite_36
-//                    )
-//                }
-//            }
-//        }
-//    }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.activity_movie_detail, menu)
+
+        val button = menu.findItem(R.id.action_favorite)
+        favoriteViewModel.getTvShowByName(args.tvshowdetail.name).observe(viewLifecycleOwner) { movie ->
+            when (movie) {
+                null -> {
+                    favoriteViewModel.removeFavoriteTvShow(args.tvshowdetail)
+                    isLiked = false
+                    button.isChecked = false
+                    button.icon = AppCompatResources.getDrawable(
+                        requireContext(),
+                        R.drawable.ic_not_favorite_36
+                    )
+                }
+                else -> {
+                    favoriteViewModel.addFavoriteTvShow(args.tvshowdetail)
+                    isLiked = true
+                    button.isChecked = true
+                    button.icon = AppCompatResources.getDrawable(
+                        requireContext(),
+                        R.drawable.ic_favorite_36
+                    )
+                }
+            }
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
+            R.id.action_favorite -> {
+                toggleMovieFavorite(item)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun toggleMovieFavorite (menuItem: MenuItem) {
+        when (isLiked) {
+            false -> {
+                favoriteViewModel.addFavoriteTvShow(args.tvshowdetail)
+            }
+            true -> favoriteViewModel.removeFavoriteTvShow(args.tvshowdetail)
+        }
+    }
 }

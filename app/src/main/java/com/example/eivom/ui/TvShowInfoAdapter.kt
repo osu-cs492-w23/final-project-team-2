@@ -17,8 +17,8 @@ class TvShowInfoAdapter(
 ): RecyclerView.Adapter<TvShowInfoAdapter.TvShowInfoViewHolder>() {
     var tvShowInfoList: List<TvShowList> = listOf()
 
-    fun updateInfo(info: TvShowInfo?){
-        tvShowInfoList = info?.results ?: listOf()
+    fun updateInfo(info: List<TvShowList>){
+        tvShowInfoList = info
         Log.d("TvShowInfoAdapter", "Data: $tvShowInfoList")
         notifyDataSetChanged()
     }
