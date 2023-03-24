@@ -12,7 +12,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.eivom.R
-import com.google.android.material.button.MaterialButton
 
 class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
     private val args: MovieDetailFragmentArgs by navArgs()
@@ -34,7 +33,7 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
             .load(args.moviedetail.poster_path)
             .into(view.findViewById(R.id.personPoster))
 
-        view.findViewById<TextView>(R.id.personKnownForList).text = getString(R.string.movie_description, args.moviedetail.overview)
+        view.findViewById<TextView>(R.id.personAppearsIn).text = getString(R.string.movie_description, args.moviedetail.overview)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
