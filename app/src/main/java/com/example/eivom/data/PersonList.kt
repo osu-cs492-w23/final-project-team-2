@@ -8,37 +8,39 @@ import com.squareup.moshi.ToJson
 data class PersonList(
     val adult: Boolean,
     val name: String,
+    val popularity: String,
     val gender: Int,
     val known_for_department: String,
     val profile_path: String,
-//    val known_for: List<Movie>?
+    val known_for: List<MovieJson>?
 ): java.io.Serializable
 
 @JsonClass(generateAdapter = true)
 data class PersonListJson(
     val adult: Boolean,
     val name: String,
+    val popularity: Double,
     val gender: Int,
     val known_for_department: String,
     val profile_path: String,
-//    val known_for: List<Movie>?
+    val known_for: List<MovieJson>?
 )
-//
-//@JsonClass(generateAdapter = true)
-//data class Movie(
-//    val title: String,
-//    val poster_path: String
-//)
+
+@JsonClass(generateAdapter = true)
+data class MovieJson(
+    val poster_path: String
+)
 
 class PersonListJsonAdapter{
     @FromJson
     fun personInfoFromJson(list: PersonListJson) = PersonList(
         adult = list.adult,
         name = list.name,
+        popularity = "Popularity: ${list.popularity.toBigDecimal().toPlainString()} %",
         gender = list.gender,
         known_for_department = list.known_for_department,
         profile_path = "https://image.tmdb.org/t/p/w500${list.profile_path}",
-//        known_for = list.known_for
+        known_for = list.known_for
     )
 
     @ToJson

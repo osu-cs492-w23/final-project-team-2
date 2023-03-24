@@ -14,6 +14,8 @@
     <string name="label_category_tvshow">Trending TV Shows</string>
     <string name="label_tvshow_detail">TvShow Detail</string>
 
+    <string name="label_person_detail">Person Detail</string>
+
     <string name="label_category_comedy">Comedy</string>
 
     <string name="movie_title">%1$s</string>
@@ -23,4 +25,8 @@
     <string name="tv_overview">%1$s</string>
     <string name="tv_first_air_date">%1$s</string>
     <string name="tv_rating">%1$s</string>
+
+    <string name="person_name">%1$s</string>
+    <string name="person_gender">%1$s</string>
+    <string name="person_popularity">%1$s</string>
 </resources>

@@ -163,5 +163,7 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
     }
 
     private fun onPersonItemClick(list: PersonList){
+        val directions = MovieInfoFragmentDirections.navigateToPersonDetail(list)
+        findNavController().navigate(directions)
     }
 }
