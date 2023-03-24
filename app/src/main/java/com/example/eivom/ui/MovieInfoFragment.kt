@@ -158,6 +158,8 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
     }
 
     private fun onTvShowItemClick(list: TvShowList){
+        val directions = MovieInfoFragmentDirections.navigateToTvshowDetail(list)
+        findNavController().navigate(directions)
     }
 
     private fun onPersonItemClick(list: PersonList){

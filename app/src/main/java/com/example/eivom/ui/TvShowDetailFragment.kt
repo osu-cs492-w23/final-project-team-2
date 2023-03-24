@@ -4,34 +4,56 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.example.eivom.R
+import org.w3c.dom.Text
 
-class TvShowDetailFragment: Fragment() {
+class TvShowDetailFragment: Fragment(R.layout.tv_details_activity) {
 
     private val args: TvShowDetailFragmentArgs by navArgs()
 
-    private val favoriteViewModel: FavoriteMoviesViewModel by viewModels()
-    private var isLiked = false
+//    private val favoriteViewModel: FavoriteMoviesViewModel by viewModels()
+//    private var isLiked = false
 
     override fun onViewCreated(
         view: View,
         savedInstanceState: Bundle?
     ) {
         super.onViewCreated(view, savedInstanceState)
+
+        setHasOptionsMenu(true)
+
+        view.findViewById<TextView>(R.id.tvshowTitle).text = getString(R.string.tv_name, args.tvshowdetail.name)
+
+        Glide.with(this)
+            .load(args.tvshowdetail.poster_path)
+            .into(view.findViewById(R.id.tvshowPoster))
+
+        view.findViewById<TextView>(R.id.tvshowOverview).text = getString(R.string.tv_overview, args.tvshowdetail.overview)
+
+        view.findViewById<TextView>(R.id.tvFirstAirDate).text = getString(R.string.tv_first_air_date, args.tvshowdetail.first_air_date)
+
+        view.findViewById<TextView>(R.id.tvShowRating).text = getString(R.string.tv_rating, args.tvshowdetail.vote_average)
+
+        Glide.with(this)
+            .load(args.tvshowdetail.backdrop_path)
+            .into(view.findViewById(R.id.tvBackdropImage))
     }
-//
+
 //    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
 //        inflater.inflate(R.menu.activity_movie_detail, menu)
 //
 //        val button = menu.findItem(R.id.action_favorite)
-//        favoriteViewModel.getMovieByName(args.moviedetail.title).observe(viewLifecycleOwner) { movie ->
+//        favoriteViewModel.getMovieByName(args.tvshowdetail.name).observe(viewLifecycleOwner) { movie ->
 //            when (movie) {
 //                null -> {
-//                    favoriteViewModel.removeFavoriteMovie(args.moviedetail)
+//                    favoriteViewModel.removeFavoriteMovie(args.tvshowdetail)
 //                    isLiked = false
 //                    button.isChecked = false
 //                    button.icon = AppCompatResources.getDrawable(
@@ -40,7 +62,7 @@ class TvShowDetailFragment: Fragment() {
 //                    )
 //                }
 //                else -> {
-//                    favoriteViewModel.addFavoriteMovie(args.moviedetail)
+//                    favoriteViewModel.addFavoriteMovie(args.tvshowdetail)
 //                    isLiked = true
 //                    button.isChecked = true
 //                    button.icon = AppCompatResources.getDrawable(
