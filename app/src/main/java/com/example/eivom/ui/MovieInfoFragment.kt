@@ -19,11 +19,6 @@ import com.google.android.material.progressindicator.CircularProgressIndicator
 class MovieInfoFragment : Fragment(R.layout.movie_info) {
     private val TAG = "MovieInfoFragment"
 
-    //NEED TO CHANGE THE BELOW SNIPPET
-    //Videos
-//    private val videoInfoViewModel : VideoInfoViewModel by viewModels()
-//    private val videoInfoAdapter = VideoInfoAdapter(::onVideoItemClick)
-
     //Movies
     private val movieInfoViewModel : MovieInfoViewModel by viewModels()
     private val infoAdapter = MovieInfoAdapter(::onInfoItemClick)
@@ -39,9 +34,6 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
     private lateinit var movieInfoRV : RecyclerView
     private lateinit var tvShowInfoRV : RecyclerView
     private lateinit var personInfoRV : RecyclerView
-    
-    //NEED TO CHANGE THE LOCATION OF THE BELOW SNIPPET
-//    private lateinit var videoInfoRV : RecyclerView
 
     private lateinit var loadingErrorTV : TextView
     private lateinit var loadingIndicator : CircularProgressIndicator
@@ -70,11 +62,6 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
         personInfoRV.setHasFixedSize(true)
         personInfoRV.adapter = personInfoAdapter
 
-        //NEED TO CHANGE THE LOCATION OF THE BELOW SNIPPET
-//        videoInfoRV = view.findViewById(R.id.rv_movie_info2)
-//        videoInfoRV.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-//        videoInfoRV.setHasFixedSize(true)
-//        videoInfoRV.adapter = videoInfoAdapter
 
         //MOVIEINFOVIEWMODEL
         movieInfoViewModel.info.observe(viewLifecycleOwner){info ->
@@ -159,37 +146,6 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
                 loadingIndicator.visibility = View.INVISIBLE
             }
         }
-
-        //NEED TO CHANGE THE LOCATION OF THE BELOW SNIPPET
-        // *****    videoInfoViewModel      *****   //
-//        videoInfoViewModel.info.observe(viewLifecycleOwner){info ->
-//            if(info != null){
-//                videoInfoAdapter.updateInfo(info)
-//
-//                videoInfoRV.visibility = View.VISIBLE
-//                videoInfoRV.scrollToPosition(0)
-//            }
-//        }
-//
-//        videoInfoViewModel.error.observe(viewLifecycleOwner){error ->
-//            if(error != null){
-//                loadingErrorTV.text = getString(R.string.loading_error, error.message)
-//                loadingErrorTV.visibility = View.VISIBLE
-//                Log.e(TAG, "Error fetching VideoDatabase: ${error.message}")
-//            }
-//        }
-//
-//        videoInfoViewModel.loading.observe(viewLifecycleOwner){loading ->
-//            if(loading){
-//                loadingIndicator.visibility = View.VISIBLE
-//                loadingErrorTV.visibility = View.INVISIBLE
-//                videoInfoRV.visibility = View.INVISIBLE
-//            }
-//            else{
-//                loadingIndicator.visibility = View.INVISIBLE
-//            }
-//        }
-
     }
     override fun onResume() {
         super.onResume()
@@ -215,9 +171,5 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
     private fun onPersonItemClick(list: PersonList){
         val directions = MovieInfoFragmentDirections.navigateToPersonDetail(list)
         findNavController().navigate(directions)
-    }
-
-    private fun onVideoItemClick(list: VideoList){
-
     }
 }
