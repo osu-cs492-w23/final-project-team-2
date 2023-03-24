@@ -26,7 +26,7 @@ class VideoInfoAdapter(private val onClick: KFunction1<VideoList, Unit>): Recycl
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VideoInfoViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.movie_info_list_item, parent, false)
+            .inflate(R.layout.movie_details_activity, parent, false)
 
         return VideoInfoViewHolder(view, onClick)
     }
@@ -36,7 +36,7 @@ class VideoInfoAdapter(private val onClick: KFunction1<VideoList, Unit>): Recycl
     }
 
     class VideoInfoViewHolder(itemView: View, val onClick: (VideoList) -> Unit): ViewHolder(itemView) {
-        private val key: TextView = itemView.findViewById(R.id.overview)
+        private val key: TextView = itemView.findViewById(R.id.movieTrailer)
 
         private lateinit var currentVideoInfo: VideoList
 

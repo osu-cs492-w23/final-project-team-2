@@ -29,6 +29,7 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
     private var isLiked = false
 
     private val videoInfoViewModel : VideoInfoViewModel by viewModels()
+    private lateinit var videoInfoAdapter : VideoInfoAdapter
     override fun onViewCreated(
         view: View,
         savedInstanceState: Bundle?
@@ -49,6 +50,8 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
 
         view.findViewById<TextView>(R.id.movieRating).text = getString(R.string.movie_rating, args.moviedetail.vote_average)
 
+        videoInfoViewModel.loadVideoInfo(args.moviedetail.id, "1f89bc62d244a63f91c60d7a7381ebd3")
+
         val testTrailer = view.findViewById<YouTubePlayerView>(R.id.movieTrailer)
 
         testTrailer.initialize(object : AbstractYouTubePlayerListener() {
@@ -57,7 +60,6 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
             }
         }, IFramePlayerOptions.default)
 
-        videoInfoViewModel.loadVideoInfo(args.moviedetail.id, "1f89bc62d244a63f91c60d7a7381ebd3")
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
