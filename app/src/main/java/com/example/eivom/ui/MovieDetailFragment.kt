@@ -12,10 +12,19 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.eivom.R
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.customui.DefaultPlayerUiController
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerListener
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.options.IFramePlayerOptions
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+import retrofit2.Retrofit
+
 
 class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
     private val args: MovieDetailFragmentArgs by navArgs()
     private val favoriteViewModel: FavoriteMoviesViewModel by viewModels()
+
 
     private var isLiked = false
 
@@ -38,6 +47,14 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
         view.findViewById<TextView>(R.id.movieReleaseDate).text = getString(R.string.movie_release_date, args.moviedetail.release_date)
 
         view.findViewById<TextView>(R.id.movieRating).text = getString(R.string.movie_rating, args.moviedetail.vote_average)
+
+        val testTrailer = view.findViewById<YouTubePlayerView>(R.id.movieTrailer)
+
+        testTrailer.initialize(object : AbstractYouTubePlayerListener() {
+            override fun onReady(youTubePlayer: YouTubePlayer) {
+                youTubePlayer.loadVideo("NsUWXo8M7UA", 0f)
+            }
+        }, IFramePlayerOptions.default)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -84,4 +101,6 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
             true -> favoriteViewModel.removeFavoriteMovie(args.moviedetail)
         }
     }
+
+
 }
