@@ -37,7 +37,7 @@ class EivomListJsonAdapter{
     fun movieInfoFromJson(list: MovieListJson) = MovieList(
         id = list.id,
         title = list.title,
-        overview = list.overview,
+        overview = "Description: ${list.overview}",
         poster_path = "https://image.tmdb.org/t/p/w500${list.poster_path}",
         release_date = "Release Date: ${list.release_date}",
         adult = list.adult,
