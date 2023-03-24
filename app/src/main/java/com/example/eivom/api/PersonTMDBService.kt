@@ -10,7 +10,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface PersonTMDBService {
-    @GET("trending/person/week")
+    @GET("person/popular")
     suspend fun loadPersonList(
         @Query("api_key") apikey: String
     ) : Response<PersonInfo>

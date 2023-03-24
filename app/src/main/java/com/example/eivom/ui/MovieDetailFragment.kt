@@ -12,13 +12,16 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.eivom.R
+import com.example.eivom.data.VideoList
 
 class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
     private val args: MovieDetailFragmentArgs by navArgs()
-    private val favoriteViewModel: FavoriteMoviesViewModel by viewModels()
 
+    private val favoriteViewModel: FavoriteMoviesViewModel by viewModels()
     private var isLiked = false
 
+    private val videoInfoViewModel : VideoInfoViewModel by viewModels()
+    private val videoInfoAdapter = VideoInfoAdapter(::onVideoItemClick)
     override fun onViewCreated(
         view: View,
         savedInstanceState: Bundle?
@@ -38,6 +41,8 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
         view.findViewById<TextView>(R.id.movieReleaseDate).text = getString(R.string.movie_release_date, args.moviedetail.release_date)
 
         view.findViewById<TextView>(R.id.movieRating).text = getString(R.string.movie_rating, args.moviedetail.vote_average)
+
+        videoInfoViewModel.loadVideoInfo(args.moviedetail.id, "1f89bc62d244a63f91c60d7a7381ebd3")
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -83,5 +88,9 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
             }
             true -> favoriteViewModel.removeFavoriteMovie(args.moviedetail)
         }
+    }
+
+    private fun onVideoItemClick(videoList: VideoList){
+
     }
 }
