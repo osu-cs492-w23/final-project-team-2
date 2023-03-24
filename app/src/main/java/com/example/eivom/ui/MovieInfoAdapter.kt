@@ -21,7 +21,6 @@ class MovieInfoAdapter(
 
     fun updateInfo(info: List<MovieList>?) {
         movieInfoList = info ?: listOf()
-        Log.d("MovieInfoAdapter", "Data: $movieInfoList")
         notifyDataSetChanged()
     }
 
@@ -62,7 +61,6 @@ class MovieInfoAdapter(
             Glide.with(ctx)
                 .load(movieList.poster_path)
                 .into(posterTV)
-
         }
     }
 }
