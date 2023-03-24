@@ -10,12 +10,12 @@
         android:layout_width="169dp"
         android:layout_height="231dp"
         android:layout_marginTop="12dp"
-        app:layout_constraintStart_toStartOf="@+id/personTitle"
-        app:layout_constraintTop_toBottomOf="@+id/personTitle"
+        app:layout_constraintStart_toStartOf="@+id/personName"
+        app:layout_constraintTop_toBottomOf="@+id/personName"
         app:srcCompat="@drawable/sample_movie_poster" />
 
     <TextView
-        android:id="@+id/personTitle"
+        android:id="@+id/personName"
         android:layout_width="wrap_content"
         android:layout_height="34dp"
         android:layout_marginStart="32dp"
@@ -33,11 +33,11 @@
         android:layout_marginTop="8dp"
         android:text="Known For"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@id/personRating"
-        app:layout_constraintTop_toBottomOf="@+id/personRating" />
+        app:layout_constraintStart_toStartOf="@id/personPopularity"
+        app:layout_constraintTop_toBottomOf="@+id/personPopularity" />
 
     <TextView
-        android:id="@+id/personRating"
+        android:id="@+id/personPopularity"
         android:layout_width="185dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
