@@ -3,6 +3,9 @@
     <item
         android:id="@+id/favoriteMovie"
         android:title="Favorite Movies">
-
+    </item>
+    <item
+        android:id="@+id/favoriteTvShow"
+        android:title="Favorite TV Shows">
     </item>
 </menu>

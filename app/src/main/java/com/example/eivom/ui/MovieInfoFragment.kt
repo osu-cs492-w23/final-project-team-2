@@ -91,7 +91,7 @@ class MovieInfoFragment : Fragment(R.layout.movie_info) {
         //TVSHOWINFOVIEWMODEL
         tvShowInfoViewModel.info.observe(viewLifecycleOwner){info ->
             if(info != null){
-                tvShowInfoAdapter.updateInfo(info)
+                tvShowInfoAdapter.updateInfo(info.results)
                 tvShowInfoRV.visibility = View.VISIBLE
                 tvShowInfoRV.scrollToPosition(0)
             }

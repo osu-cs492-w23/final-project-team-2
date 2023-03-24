@@ -1,13 +1,17 @@
 package com.example.eivom.data
 
 import android.icu.util.UniversalTimeScale.toBigDecimal
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.JsonClass
 import com.squareup.moshi.ToJson
 
+@Entity
 data class TvShowList(
     val adult : Boolean,
     val backdrop_path: String,
+    @PrimaryKey
     val name : String,
     val original_language : String,
     val overview : String,

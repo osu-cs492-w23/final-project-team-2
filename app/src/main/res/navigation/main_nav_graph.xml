@@ -47,5 +47,13 @@
             app:destination="@id/moviedetail"/>
     </fragment>
 
+    <fragment
+        android:id="@+id/favoriteTvShow"
+        android:name="com.example.eivom.ui.FavoriteTvShowFragment"
+        android:label="Favorite Tv Shows">
+        <action
+            android:id="@id/navigate_to_tvshow_detail"
+            app:destination="@id/tvshowdetail"/>
+    </fragment>
 
 </navigation>
