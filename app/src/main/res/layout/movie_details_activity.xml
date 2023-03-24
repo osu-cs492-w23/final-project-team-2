@@ -22,7 +22,7 @@
         android:layout_marginTop="40dp"
         android:text="movieTitle"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,37 +33,41 @@
         android:layout_marginTop="8dp"
         android:text="Description"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@id/personRating"
-        app:layout_constraintTop_toBottomOf="@+id/personRating" />
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+        app:layout_constraintStart_toStartOf="@id/movieRating"
+        app:layout_constraintTop_toBottomOf="@+id/movieRating" />
 
     <TextView
         android:id="@+id/tvBackdropTitle"
         android:layout_width="149dp"
         android:layout_height="34dp"
         android:layout_marginTop="44dp"
-        android:text="trailerTitle"
+        android:text="Trailer:"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/personPoster"
         app:layout_constraintTop_toBottomOf="@+id/personPoster" />
 
     <TextView
-        android:id="@+id/personRating"
+        android:id="@+id/movieRating"
         android:layout_width="185dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Rating"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@+id/personKnownFor"
-        app:layout_constraintTop_toBottomOf="@+id/personKnownFor" />
+        app:layout_constraintStart_toStartOf="@+id/movieReleaseDate"
+        app:layout_constraintTop_toBottomOf="@+id/movieReleaseDate" />
 
     <TextView
-        android:id="@+id/personKnownFor"
+        android:id="@+id/movieReleaseDate"
         android:layout_width="185dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
         android:layout_marginEnd="16dp"
         android:text="Release Date"
         android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
