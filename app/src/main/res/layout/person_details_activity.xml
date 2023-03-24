@@ -27,14 +27,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/personKnownForList"
+        android:id="@+id/personAppearsIn"
         android:layout_width="185dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Known For"
+        android:layout_marginTop="36dp"
+        android:text="Appears In:"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@id/personPopularity"
-        app:layout_constraintTop_toBottomOf="@+id/personPopularity" />
+        app:layout_constraintStart_toStartOf="@+id/personName"
+        app:layout_constraintTop_toBottomOf="@+id/personPoster" />
 
     <TextView
         android:id="@+id/personPopularity"
@@ -46,5 +46,13 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/personAppearsInList"
+        android:layout_width="343dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/personPoster"
+        app:layout_constraintTop_toBottomOf="@+id/personAppearsIn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
