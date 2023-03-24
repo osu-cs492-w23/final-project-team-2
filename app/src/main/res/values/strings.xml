@@ -12,7 +12,7 @@
     <string name="label_movie_detail">Movie Detail</string>
 
     <string name="label_category_tvshow">Trending TV Shows</string>
-    <string name="label_category_comedy">Trending People</string>
+    <string name="label_category_people">Popular People</string>
 
     <string name="label_person_detail">Person Detail</string>
 

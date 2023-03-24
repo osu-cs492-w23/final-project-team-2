@@ -62,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:text="@string/label_category_comedy"
+        android:text="@string/label_category_people"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         app:layout_constraintBottom_toTopOf="@+id/rv_movie_info3"
         app:layout_constraintStart_toStartOf="parent"

@@ -13,7 +13,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.eivom.R
-import com.example.eivom.data.VideoList
 
 class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
     private val args: MovieDetailFragmentArgs by navArgs()
