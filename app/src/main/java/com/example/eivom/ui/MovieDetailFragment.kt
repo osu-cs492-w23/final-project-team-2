@@ -20,7 +20,6 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.You
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.options.IFramePlayerOptions
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import retrofit2.Retrofit
-
 import com.example.eivom.data.VideoList
 
 class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
