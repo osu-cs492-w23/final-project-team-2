@@ -13,14 +13,10 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.eivom.R
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.customui.DefaultPlayerUiController
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerListener
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.options.IFramePlayerOptions
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-import retrofit2.Retrofit
-import com.example.eivom.data.VideoList
 
 class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
     private val args: MovieDetailFragmentArgs by navArgs()
@@ -56,7 +52,7 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
 
         testTrailer.initialize(object : AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
-                youTubePlayer.loadVideo("NsUWXo8M7UA", 0f)
+                youTubePlayer.cueVideo("NsUWXo8M7UA", 0f)
             }
         }, IFramePlayerOptions.default)
 
