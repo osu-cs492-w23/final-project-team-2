@@ -26,5 +26,6 @@ class PersonDetailFragment: Fragment(R.layout.person_details_activity) {
             .into(view.findViewById(R.id.personPoster))
 
         view.findViewById<TextView>(R.id.personPopularity).text = getString(R.string.person_popularity, args.persondetail.popularity)
+
     }
 }

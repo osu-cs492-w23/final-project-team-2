@@ -12,7 +12,6 @@ data class PersonList(
     val gender: Int,
     val known_for_department: String,
     val profile_path: String,
-    val known_for: List<MovieJson>?
 ): java.io.Serializable
 
 @JsonClass(generateAdapter = true)
@@ -39,8 +38,7 @@ class PersonListJsonAdapter{
         popularity = "Popularity: ${list.popularity.toBigDecimal().toPlainString()} %",
         gender = list.gender,
         known_for_department = list.known_for_department,
-        profile_path = "https://image.tmdb.org/t/p/w500${list.profile_path}",
-        known_for = list.known_for
+        profile_path = "https://image.tmdb.org/t/p/w500${list.profile_path}"
     )
 
     @ToJson

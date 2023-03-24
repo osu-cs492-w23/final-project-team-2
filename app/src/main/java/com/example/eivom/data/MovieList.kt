@@ -7,7 +7,6 @@ import com.squareup.moshi.JsonClass
 import com.squareup.moshi.ToJson
 import java.io.Serializable
 
-@JsonClass(generateAdapter = true)
 @Entity
 data class MovieList(
     @PrimaryKey
