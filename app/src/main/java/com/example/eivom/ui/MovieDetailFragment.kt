@@ -34,6 +34,10 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
             .into(view.findViewById(R.id.personPoster))
 
         view.findViewById<TextView>(R.id.personAppearsIn).text = getString(R.string.movie_description, args.moviedetail.overview)
+
+        view.findViewById<TextView>(R.id.movieReleaseDate).text = getString(R.string.movie_release_date, args.moviedetail.release_date)
+
+        view.findViewById<TextView>(R.id.movieRating).text = getString(R.string.movie_rating, args.moviedetail.vote_average)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
