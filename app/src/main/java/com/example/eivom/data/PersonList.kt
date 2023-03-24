@@ -6,38 +6,39 @@ import com.squareup.moshi.JsonClass
 import com.squareup.moshi.ToJson
 
 data class PersonList(
-    val adult: Boolean,
+    val known_for: String?,
+    val known_for2: String?,
+    val known_for_department: String,
+    val gender: Int,
     val name: String,
     val popularity: String,
-    val gender: Int,
-    val known_for_department: String,
     val profile_path: String,
 ): java.io.Serializable
 
 @JsonClass(generateAdapter = true)
 data class PersonListJson(
-    val adult: Boolean,
-    val name: String,
-    val popularity: Double,
-    val gender: Int,
+    val known_for: List<KnownForListJson>,
     val known_for_department: String,
+    val gender: Int,
+    val name: String,
+    val popularity: String,
     val profile_path: String,
-    val known_for: List<MovieJson>?
 )
 
 @JsonClass(generateAdapter = true)
-data class MovieJson(
+data class KnownForListJson(
     val poster_path: String
 )
 
 class PersonListJsonAdapter{
     @FromJson
     fun personInfoFromJson(list: PersonListJson) = PersonList(
-        adult = list.adult,
-        name = list.name,
-        popularity = "Popularity: ${list.popularity.toBigDecimal().toPlainString()} %",
+        known_for = "https://image.tmdb.org/t/p/w500${list.known_for[0].poster_path}",
+        known_for2 = "https://image.tmdb.org/t/p/w500${list.known_for[1].poster_path}",
+        known_for_department = "Known For: ${list.known_for_department}",
         gender = list.gender,
-        known_for_department = list.known_for_department,
+        name = list.name,
+        popularity = "Popularity: ${list.popularity.toBigDecimal().toPlainString()}",
         profile_path = "https://image.tmdb.org/t/p/w500${list.profile_path}"
     )
 

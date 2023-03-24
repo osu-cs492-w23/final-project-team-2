@@ -1,5 +1,6 @@
 package com.example.eivom.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -20,14 +21,12 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.options.IFram
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import retrofit2.Retrofit
 
-
 class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
     private val args: MovieDetailFragmentArgs by navArgs()
     private val favoriteViewModel: FavoriteMoviesViewModel by viewModels()
-
-
     private var isLiked = false
 
+    private val videoInfoViewModel : VideoInfoViewModel by viewModels()
     override fun onViewCreated(
         view: View,
         savedInstanceState: Bundle?
@@ -55,6 +54,8 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
                 youTubePlayer.loadVideo("NsUWXo8M7UA", 0f)
             }
         }, IFramePlayerOptions.default)
+
+//        videoInfoViewModel.loadVideoInfo(args.moviedetail.id, "1f89bc62d244a63f91c60d7a7381ebd3")
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -89,6 +90,10 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
                 toggleMovieFavorite(item)
                 true
             }
+            R.id.action_share -> {
+                shareContent()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -101,6 +106,12 @@ class MovieDetailFragment : Fragment(R.layout.movie_details_activity) {
             true -> favoriteViewModel.removeFavoriteMovie(args.moviedetail)
         }
     }
-
-
+    private fun shareContent() {
+        val shareText = getString(R.string.share_text, args.moviedetail.title, args.moviedetail.poster_path)
+        val intent = Intent()
+        intent.action = Intent.ACTION_SEND
+        intent.type = "text/plain"
+        intent.putExtra(Intent.EXTRA_TEXT, shareText)
+        startActivity(Intent.createChooser(intent, null))
+    }
 }
