@@ -38,8 +38,6 @@ class PersonDetailFragment: Fragment(R.layout.person_details_activity) {
             view.findViewById<TextView>(R.id.gender).text = "Gender: Male"
         }
 
-        view.findViewById<TextView>(R.id.popularity).text = getString(R.string.person_popularity, args.persondetail.popularity)
-
         Glide.with(this)
             .load(args.persondetail.known_for)
             .into(view.findViewById(R.id.personAppearsInList1))
