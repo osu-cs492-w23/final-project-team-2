@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.JsonClass
 import com.squareup.moshi.ToJson
+import java.math.RoundingMode
 
 @Entity
 data class TvShowList(
@@ -42,7 +43,7 @@ class TvShowListJsonAdapter{
         overview = list.overview,
         poster_path = "https://image.tmdb.org/t/p/w500${list.poster_path}",
         first_air_date = "Release Date: ${list.first_air_date}",
-        vote_average = "Rating: ${list.vote_average.toBigDecimal().toPlainString()}"
+        vote_average = "Rating: ${list.vote_average.toBigDecimal().setScale(2, RoundingMode.HALF_UP).toPlainString()}/10"
     )
 
     @ToJson
