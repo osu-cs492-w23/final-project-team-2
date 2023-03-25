@@ -16,7 +16,7 @@
 
     <string name="label_person_detail">Person Detail</string>
 
-    <string name="label_tvshow_detail">TvShow Detail</string>
+    <string name="label_tvshow_detail">TV Show Detail</string>
 
     <string name="movie_title">%1$s</string>
     <string name="movie_description">%1$s</string>
